@@ -9,6 +9,7 @@ import { ChallengeResult, RunTotals } from '@quorum/simulation/challenges'
 import { Replay } from '@quorum/simulation/replay'
 import { ChallengeVerdict } from '@quorum/rpc'
 import { histogramQuery } from './challenge-query.ts'
+import { History } from './history.ts'
 import { AppRoute, MENU_PAGES } from './route.ts'
 import {
   ComponentId,
@@ -48,6 +49,7 @@ export const Panel = Schema.Literals([
   'settings',
   'glossary',
   'inbox',
+  'dashboard',
 ])
 export type Panel = typeof Panel.Type
 
@@ -338,9 +340,10 @@ export const Model = Schema.Struct({
   cue: Schema.NullOr(RevealCue),
   muted: Schema.Boolean,
   motion: Motion,
-  /** The Glossary panel's open entry and search. */
+  /** The Glossary panel's open entry, search, and category filter. */
   glossaryFocus: Schema.NullOr(Schema.String),
   glossaryQuery: Schema.String,
+  glossaryCategory: Schema.NullOr(Schema.String),
   /** Advice the game has sent, oldest first, and the one the Inbox shows. */
   inbox: Schema.Array(Mail),
   inboxFocus: Schema.NullOr(Schema.Finite),
@@ -362,6 +365,11 @@ export const Model = Schema.Struct({
   bottleneckAt: Schema.Finite,
   /** Utilization per Node over the last two minutes, for Metrics. */
   nodeHistory: Schema.Record(Schema.String, Schema.Array(Schema.Finite)),
+  /** The Dashboard's 15-minute and 1-hour blocks, beyond the Game's 600 Samples. */
+  dashboardHistory: History,
+  /** The Dashboard's time range in calendar minutes, and the Sample its crosshair is on. */
+  dashboardRange: Schema.Finite,
+  dashboardHover: Schema.NullOr(Schema.Finite),
   /** The last goal and bottleneck logged, so the log records changes only. */
   lastGoal: Schema.String,
   lastBottleneck: Schema.String,
