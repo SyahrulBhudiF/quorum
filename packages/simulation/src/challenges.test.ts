@@ -10,7 +10,7 @@ import {
   runChallenge,
   type Challenge,
 } from './challenges.ts'
-import { REFERENCE, replayOf } from './fixtures/challenges.ts'
+import { REFERENCE, referenceReplay, replayOf } from './fixtures/challenges.ts'
 import { decodeReplay, designOf, encodeReplay } from './replay.ts'
 import type { Game } from './state.ts'
 import { SIM_VERSION } from './version.ts'
@@ -22,6 +22,12 @@ const ok = (action: Actions.Action): Game => {
 
 const run = (challenge: Challenge, game: Game) => {
   const result = runChallenge(challenge, replayOf(challenge, game))
+  if (Result.isFailure(result)) throw new Error(result.failure)
+  return result.success
+}
+
+const runWith = (challenge: Challenge, game: Game, actions: Parameters<typeof replayOf>[2]) => {
+  const result = runChallenge(challenge, replayOf(challenge, game, actions))
   if (Result.isFailure(result)) throw new Error(result.failure)
   return result.success
 }
@@ -38,9 +44,10 @@ describe('Challenges', () => {
       `${challenge.name} passes with its fix and fails from the start`,
       { timeout: 60_000 },
       () => {
-        const fix = REFERENCE[challenge.id]
-        expect(fix).toBeDefined()
-        const passed = run(challenge, fix?.(challenge.start()) ?? challenge.start())
+        expect(REFERENCE[challenge.id]).toBeDefined()
+        const reference = runChallenge(challenge, referenceReplay(challenge))
+        if (Result.isFailure(reference)) throw new Error(reference.failure)
+        const passed = reference.success
         expect(passed).toMatchObject({ passed: true, missed: null })
         const start = run(challenge, challenge.start())
         expect(start.passed).toBe(false)
@@ -50,6 +57,40 @@ describe('Challenges', () => {
           )
       },
     )
+
+  test('Split the Box: a bigger shared box passes, at a higher Cost than the split', () => {
+    const challenge = byId('split-the-box')
+    const split = run(
+      challenge,
+      REFERENCE['split-the-box']?.(challenge.start()) ?? challenge.start(),
+    )
+    const bigger = run(
+      challenge,
+      [1, 1, 1].reduce(
+        (game) => ok(Actions.resize(game, 'server', 1)),
+        ok(Actions.setFamily(challenge.start(), 'server', 'compute')),
+      ),
+    )
+    expect(bigger.passed).toBe(true)
+    expect(bigger.cost).toBeGreaterThan(split.cost)
+  })
+
+  test('an incident response ends it in time; a late one, or one the Challenge forbids, does not', () => {
+    const regex = byId('regex-of-doom')
+    const respond = (step: number) =>
+      runWith(regex, regex.start(), [
+        { step, action: { _tag: 'Respond', response: 'disable-rule' } },
+      ])
+    expect(respond(121).passed).toBe(true)
+    expect(respond(150).passed).toBe(false)
+    const noon = byId('reports-at-noon')
+    expect(
+      runWith(noon, noon.start(), [
+        { step: 121, action: { _tag: 'Respond', response: 'cancel-report' } },
+        { step: 301, action: { _tag: 'Respond', response: 'cancel-report' } },
+      ]),
+    ).toEqual(run(noon, noon.start()))
+  }, 60_000)
 
   test('the same replay gives the same result, and a run action changes it', () => {
     const challenge = byId('hello-world')
@@ -104,6 +145,20 @@ describe('Challenges', () => {
     expect(Result.isFailure(runChallenge(loop, replayOf(hello, hello.start())))).toBe(true)
   })
 
+  test('every daily drill serves its users until its incident, which then fails the start', () => {
+    const drills = new Map<string, Challenge>()
+    for (let day = 0; day < 120; day += 1) {
+      const date = new Date(Date.UTC(2027, 0, 1 + day)).toISOString().slice(0, 10)
+      const drill = dailyDrill(date)
+      drills.set(drill.brief, drill)
+    }
+    expect(drills.size).toBe(8)
+    for (const drill of drills.values()) {
+      expect(run({ ...drill, incidents: [] }, drill.start()).passed).toBe(true)
+      expect(run(drill, drill.start()).passed).toBe(false)
+    }
+  }, 60_000)
+
   test('the daily drill is the same for a date and differs across dates', () => {
     expect(dailyDrill('2026-11-02')).toMatchObject({ id: 'daily:2026-11-02', legacy: 0 })
     expect(designOf(dailyDrill('2026-11-02').start())).toEqual(
@@ -135,9 +190,9 @@ describe('Challenge unlocks', () => {
     expect(challengeOpen(byId('split-the-box'), ['hello-world'])).toBe(true)
     expect(challengeOpen(byId('slashdotted'), ['hello-world'])).toBe(false)
     expect(challengeOpen(byId('slashdotted'), ['hello-world', 'split-the-box'])).toBe(true)
-    expect(challengeOpen(byId('event-loop'), ['hello-world', 'split-the-box', 'slashdotted'])).toBe(
-      true,
-    )
+    expect(
+      challengeOpen(byId('event-loop'), ['hello-world', 'split-the-box', 'slashdotted', 'c10k']),
+    ).toBe(true)
     expect(
       challengeOpen(byId('too-many-connections'), ['hello-world', 'split-the-box', 'slashdotted']),
     ).toBe(false)
@@ -146,6 +201,7 @@ describe('Challenge unlocks', () => {
         'hello-world',
         'split-the-box',
         'slashdotted',
+        'c10k',
         'event-loop',
       ]),
     ).toBe(true)
