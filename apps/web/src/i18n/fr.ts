@@ -29,24 +29,20 @@ export const fr: Readonly<Record<string, string>> = {
   'Live traffic': 'Trafic en direct',
   'Recorded sample': 'Échantillon enregistré',
   'Back to live': 'Retour au direct',
+  'Earlier sample': 'Échantillon précédent',
+  'Later sample': 'Échantillon suivant',
   'Incoming operations': 'Opérations entrantes',
   'Sent by': 'Envoyé par',
-  'Hits / misses': 'Succès / défauts de cache',
   Backlog: 'File d’attente',
   Refused: 'Refusées',
   'Sent to Workers': 'Envoyé aux Workers',
   'Queue wait': 'Attente dans la file',
   'Day {0} · {1}': 'Jour {0} · {1}',
-  'Inspect recorded sample': 'Examiner un échantillon enregistré',
-  'Load history. Select a point or use the sample slider below.':
-    'Historique de charge. Choisissez un point ou utilisez le curseur ci-dessous.',
-  'Select a point or use arrow keys on the slider. Up to one day, sampled every 10 game minutes in this session.':
-    'Choisissez un point ou utilisez les flèches du curseur. Jusqu’à un jour, avec un relevé toutes les 10 minutes du jeu pendant cette session.',
+  'Load history. Select a point or use the sample buttons below.':
+    'Historique de charge. Choisissez un point ou utilisez les boutons ci-dessous.',
   'History appears after two recorded samples.': 'L’historique apparaît après deux relevés.',
   'Research Metrics to inspect past samples.':
     'Recherchez Métriques pour examiner les relevés passés.',
-  'Changes vs {0}: inbound {1}. Operation deltas appear below.':
-    'Évolution depuis {0} : trafic entrant {1}. Les écarts par opération figurent ci-dessous.',
   'No incoming traffic at this sample.': 'Aucun trafic entrant dans ce relevé.',
   'Shares describe incoming traffic, not CPU usage.':
     'Les parts décrivent le trafic entrant, pas l’utilisation du CPU.',

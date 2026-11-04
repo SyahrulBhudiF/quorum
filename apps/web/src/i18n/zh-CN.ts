@@ -26,23 +26,19 @@ export const zhCN: Readonly<Record<string, string>> = {
   'Live traffic': '实时流量',
   'Recorded sample': '历史采样',
   'Back to live': '返回实时',
+  'Earlier sample': '上一个采样',
+  'Later sample': '下一个采样',
   'Incoming operations': '传入操作',
   'Sent by': '流量来源',
-  'Hits / misses': '命中 / 未命中',
   Backlog: '积压任务',
   Refused: '拒绝查询',
   'Sent to Workers': '发送给 Worker',
   'Queue wait': '排队等待',
   'Day {0} · {1}': '第 {0} 天 · {1}',
-  'Inspect recorded sample': '查看历史采样',
-  'Load history. Select a point or use the sample slider below.':
-    '负载历史。选择数据点或使用下方滑块。',
-  'Select a point or use arrow keys on the slider. Up to one day, sampled every 10 game minutes in this session.':
-    '选择数据点，或聚焦滑块后使用方向键。本次会话每 10 游戏分钟采样一次，最多保留一天。',
+  'Load history. Select a point or use the sample buttons below.':
+    '负载历史。选择数据点或使用下方按钮。',
   'History appears after two recorded samples.': '记录两个采样后显示历史。',
   'Research Metrics to inspect past samples.': '研究指标后即可查看历史采样。',
-  'Changes vs {0}: inbound {1}. Operation deltas appear below.':
-    '与 {0} 相比：传入流量 {1}。各操作变化如下。',
   'No incoming traffic at this sample.': '此采样没有传入流量。',
   'Shares describe incoming traffic, not CPU usage.': '占比表示传入流量，而非 CPU 使用率。',
   'This component is down. Check its incident or restart status before resizing it.':

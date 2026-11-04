@@ -8,7 +8,7 @@ import { initialModel, update } from '@/game/update.ts'
 import { ledgerOf, type Model } from '@/game/model.ts'
 import { Message } from '@/game/message.ts'
 import { sampleNode, type NodeSample } from '@/game/node-metrics.ts'
-import { inspectorTraffic } from './inspector-traffic.ts'
+import { inspector } from './inspector.ts'
 
 const fixture = (evidence: Partial<NodeSample> = {}): Model => {
   const start = initialModel()
@@ -53,26 +53,22 @@ const fixture = (evidence: Partial<NodeSample> = {}): Model => {
   }
 }
 
-const view = (model: Model, h: HtmlBuilder<Message>) =>
-  inspectorTraffic(
-    model,
-    model.board.game.nodes.find((node) => node.id === 'database')!,
-    ledgerOf(model),
-    h,
-  )
+const view = (model: Model, h: HtmlBuilder<Message>) => inspector(model, ledgerOf(model), h)
+
+const diskHint =
+  'The working set exceeds RAM and reads hit disk. Consider more RAM, caching, or a read replica.'
 
 test('selecting a spike shows its operation rates, deltas, and former source instead of live traffic', () => {
   Scene.scene(
     { update, view },
     Scene.given(fixture()),
     Scene.expect(Scene.text('Live traffic')).toExist(),
-    Scene.type(Scene.label('Inspect recorded sample'), '1'),
+    Scene.click(Scene.role('button', { name: 'Earlier sample' })),
     Scene.expect(Scene.text('Recorded sample')).toExist(),
-    Scene.expect(Scene.selector('[data-traffic-breakdown]')).toContainText('90.0/s · 90%'),
-    Scene.expect(Scene.selector('[data-traffic-breakdown]')).toContainText('+80.0/s'),
-    Scene.expect(Scene.selector('[data-traffic-breakdown]')).toContainText('10.0/s · 10%'),
+    Scene.expect(Scene.selector('[data-inspector]')).toContainText('90.0/s · 90%'),
+    Scene.expect(Scene.selector('[data-inspector]')).toContainText('+80.0/s'),
+    Scene.expect(Scene.selector('[data-inspector]')).toContainText('10.0/s · 10%'),
     Scene.expect(Scene.text('App Server · retired-server')).toExist(),
-    Scene.expect(Scene.selector('[data-traffic-hint]')).toBeAbsent(),
     Scene.click(Scene.role('button', { name: 'Back to live' })),
     Scene.expect(Scene.text('Live traffic')).toExist(),
     Scene.expect(Scene.text('App Server · retired-server')).toBeAbsent(),
@@ -83,10 +79,10 @@ test('historical disk pressure recommends read mitigation even when the live com
   Scene.scene(
     { update, view },
     Scene.given(fixture({ disk: true, limit: 'disk' })),
-    Scene.type(Scene.label('Inspect recorded sample'), '1'),
-    Scene.expect(Scene.selector('[data-traffic-hint]')).toContainText('reads hit disk'),
+    Scene.click(Scene.role('button', { name: 'Earlier sample' })),
+    Scene.expect(Scene.text(diskHint)).toExist(),
     Scene.click(Scene.role('button', { name: 'Back to live' })),
-    Scene.expect(Scene.selector('[data-traffic-hint]')).toBeAbsent(),
+    Scene.expect(Scene.text(diskHint)).toBeAbsent(),
   )
 })
 
@@ -94,10 +90,11 @@ test('the earliest recorded sample has no invented comparison and quiet traffic 
   Scene.scene(
     { update, view },
     Scene.given(fixture()),
-    Scene.type(Scene.label('Inspect recorded sample'), '0'),
+    Scene.click(Scene.role('button', { name: 'Earlier sample' })),
+    Scene.click(Scene.role('button', { name: 'Earlier sample' })),
     Scene.expect(Scene.text('Recorded sample')).toExist(),
-    Scene.expect(Scene.selector('[data-traffic-breakdown]')).toContainText('10.0/s · 50%'),
-    Scene.expect(Scene.selector('[data-traffic-breakdown]')).not.toContainText('Changes vs'),
-    Scene.expect(Scene.selector('[data-traffic-hint]')).toBeAbsent(),
+    Scene.expect(Scene.selector('[data-inspector]')).toContainText('10.0/s · 50%'),
+    Scene.expect(Scene.selector('[data-inspector]')).not.toContainText('+80.0/s'),
+    Scene.expect(Scene.text(diskHint)).toBeAbsent(),
   )
 })
