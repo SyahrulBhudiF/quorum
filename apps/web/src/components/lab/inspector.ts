@@ -69,6 +69,8 @@ import type {
 import { compact, duration, money, ms, priceLabel, rate } from '@quorum/ui/game/format'
 import { Message } from '@/game/message.ts'
 import type { Model } from '@/game/model.ts'
+import { hasTraffic } from '@/game/node-metrics.ts'
+import { inspectorTraffic } from './inspector-traffic.ts'
 import { COMPONENT_ICONS } from '@quorum/ui/game/icons'
 import { icon } from '@quorum/ui/primitives/icon'
 import { badge } from '@quorum/ui/primitives/badge'
@@ -1680,10 +1682,27 @@ export const inspector = (model: Model, ledger: Ledger, h: HtmlBuilder<Message>)
         [
           h.div(
             [h.Class('px-4 pt-1 pb-2')],
-            [h.div([h.Class(NESTED)], stats(game, node, ledger, h))],
+            [
+              ...(hasTraffic(node)
+                ? [h.p([h.Class(`${EYEBROW} mb-2 text-muted-foreground`)], ['Live now'])]
+                : []),
+              h.div([h.Class(NESTED)], stats(game, node, ledger, h)),
+            ],
           ),
-          ...(has(game, 'metrics') && history.length > 1 && !def.fixed
-            ? [section('Load, last day', [sparkline(history, h)], h)]
+          ...(hasTraffic(node) ? [inspectorTraffic(model, node, ledger, h)] : []),
+          ...(has(game, 'metrics') && history.length > 1 && !def.fixed && !hasTraffic(node)
+            ? [
+                section(
+                  'Load, last day',
+                  [
+                    sparkline(
+                      history.map((sample) => sample.utilization),
+                      h,
+                    ),
+                  ],
+                  h,
+                ),
+              ]
             : []),
           ...resources(node, ledger, h),
           ...(node.type === 'users' ? traffic(game, ledger, h) : []),
