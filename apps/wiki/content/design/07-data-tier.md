@@ -187,6 +187,11 @@ its license in 2024). Redis added AGPLv3 as a license option in 2025.
 The Cache serves `q-read` from memory. A hit costs 0.5 ms, and a miss costs the cache lookup plus
 the database read.
 
+The graph draws the Cache between the App Server and the Database for every strategy. That is a
+simplification. In real cache-aside the app talks to both and the Cache never calls the Database,
+but the game has one rule for a Cache, so every Cache forwards its misses and one shape stands for all
+four strategies.
+
 ### Variants
 
 | Variant   | Profile                                                                                                                                                                                                  |

@@ -477,7 +477,7 @@ export const GLOSSARY: ReadonlyArray<GlossaryEntry> = [
     definition:
       'A caching pattern where the application checks the cache first. On a miss it reads the database and puts the result in the cache, and on a write it updates the database and invalidates the cached entry.',
     inGame:
-      'A Cache answers the read queries it holds and sends misses on to the Database. Its hit ratio is √(memory / hot data) × TTL factor × warmth, with about 200 KB of hot data per user. Writes pass through and invalidate, so a write-heavy mix lowers the hit ratio. A longer TTL (10 s, 60 s, or 1 h) keeps more hits but serves more stale reads.',
+      'A Cache answers the read queries it holds and sends misses on to the Database. Real cache-aside has the app read the Database itself on a miss, but the game has one Cache rule, so the graph draws the Cache between the two for every strategy. Its hit ratio is √(memory / hot data) × TTL factor × warmth, with about 200 KB of hot data per user. Writes pass through and invalidate, so a write-heavy mix lowers the hit ratio. A longer TTL (10 s, 60 s, or 1 h) keeps more hits but serves more stale reads.',
     design: [{ label: 'Cache strategies', url: '/design/07-data-tier#strategies-a-tradeoff-card' }],
     related: ['write-through-cache', 'cache-stampede', 'cache-hit-rate', 'hot-key'],
     links: [
