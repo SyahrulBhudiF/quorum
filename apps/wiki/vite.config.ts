@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -11,6 +12,7 @@ import { contentIndex } from './src/content-index.ts'
 import { Frontmatter } from './src/frontmatter.ts'
 import { islandAttributes } from './src/islands.ts'
 import type { Locale } from './src/i18n/locale.ts'
+import type { OgCard } from './src/og-card.ts'
 import type { Page } from './src/page.ts'
 import { WIKI_ORIGIN } from './src/site.ts'
 
@@ -59,13 +61,35 @@ const staticFiles = (): Plugin => ({
         await mkdir(dirname(resolve(client, name)), { recursive: true })
         await writeFile(resolve(client, name), json)
       }
+      const { Renderer } = await import('takumi-js/node')
+      const { ogNode, OG_WIDTH, OG_HEIGHT } = await import('./src/og-card.ts')
+      const renderer = new Renderer()
+      const font = (name: string, file: string) => ({
+        name,
+        data: readFileSync(resolve(import.meta.dirname, 'public/fonts', file)),
+      })
+      const fonts = [
+        font('Geist', 'geist-latin-v5.woff2'),
+        font('Geist Mono', 'geist-mono-latin-v6.woff2'),
+      ]
+      const cards: ReadonlyArray<OgCard> = entry.ogCards()
+      for (const card of cards) {
+        const png = await renderer.render(ogNode(card), {
+          width: OG_WIDTH,
+          height: OG_HEIGHT,
+          format: 'png',
+          fonts,
+        })
+        await mkdir(dirname(resolve(client, card.file)), { recursive: true })
+        await writeFile(resolve(client, card.file), png)
+      }
       const dates = lastChanged()
       await writeFile(
         resolve(client, 'sitemap.xml'),
         entry.sitemap((source: string) => dates.get(source) ?? null),
       )
       builder.config.logger.info(
-        `  wrote llms.txt, sitemap.xml, ${Object.keys(indexes).length} search indexes, and ${Object.keys(files).length - 2} .md pages`,
+        `  wrote llms.txt, sitemap.xml, ${cards.length} social cards, ${Object.keys(indexes).length} search indexes, and ${Object.keys(files).length - 2} .md pages`,
       )
     },
   },

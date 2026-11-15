@@ -13,6 +13,7 @@ import {
   type Locale,
 } from './i18n/locale.ts'
 import { init, normalize } from './main.ts'
+import { ogFile, type OgCard } from './og-card.ts'
 import { markdownPath } from './markdown.ts'
 import type { Page } from './page.ts'
 import { PAGES, pageAt, pageIn, pagesFor } from './pages.ts'
@@ -88,7 +89,7 @@ const structuredData = (page: Page): string => {
             description: page.summary,
             url: urlOf(locale, page.path),
             mainEntityOfPage: urlOf(locale, page.path),
-            image: `${WIKI_ORIGIN}/og.png`,
+            image: `${WIKI_ORIGIN}/${ogFile(page.path)}`,
             author: AUTHOR,
             publisher: AUTHOR,
             inLanguage: LOCALE_TAGS[locale].lang,
@@ -153,6 +154,9 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
   const t = langOf(locale).t.site
   const description = escape(page?.summary ?? t.description)
   const title = escape(application.title)
+  // Each page has its own card, in English for every language. A 404 uses the site's card.
+  const image = `${WIKI_ORIGIN}/${page ? ogFile(page.path) : 'og.png'}`
+  const imageAlt = escape(page ? `${page.title} · ${t.name}` : t.ogImageAlt)
   return Server.renderDocument(application, assets, {
     lang: LOCALE_TAGS[locale].lang,
     head: [
@@ -173,16 +177,16 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
       ...(page ? [`<meta property="og:url" content="${urlOf(locale, page.path)}">`] : []),
       `<meta property="og:title" content="${title}">`,
       `<meta property="og:description" content="${description}">`,
-      `<meta property="og:image" content="${WIKI_ORIGIN}/og.png">`,
+      `<meta property="og:image" content="${image}">`,
       '<meta property="og:image:type" content="image/png">',
       '<meta property="og:image:width" content="1200">',
       '<meta property="og:image:height" content="630">',
-      `<meta property="og:image:alt" content="${escape(t.ogImageAlt)}">`,
+      `<meta property="og:image:alt" content="${imageAlt}">`,
       '<meta name="twitter:card" content="summary_large_image">',
       `<meta name="twitter:title" content="${title}">`,
       `<meta name="twitter:description" content="${description}">`,
-      `<meta name="twitter:image" content="${WIKI_ORIGIN}/og.png">`,
-      `<meta name="twitter:image:alt" content="${escape(t.ogImageAlt)}">`,
+      `<meta name="twitter:image" content="${image}">`,
+      `<meta name="twitter:image:alt" content="${imageAlt}">`,
       ...(page
         ? [
             ...alternates(page.path),
@@ -205,6 +209,17 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
 
 /** The files the build adds beside the pages (vite.config.ts): llms.txt and every page's Markdown. */
 export { markdownFiles } from './markdown.ts'
+
+/** One social card for every English page, rendered by the build (vite.config.ts). */
+export const ogCards = (): ReadonlyArray<OgCard> => {
+  const sections = langOf('en').t.quadrants
+  return PAGES.map((page) => ({
+    file: ogFile(page.path),
+    title: page.path === '/' ? 'Learn system design by playing' : page.title,
+    summary: page.summary,
+    label: page.path === '/' ? 'Quorum Wiki' : sections[page.section].label,
+  }))
+}
 
 /** The search index of each language, by the file the build writes it to (vite.config.ts). */
 export const searchIndexes = async (): Promise<Readonly<Record<string, string>>> => {
