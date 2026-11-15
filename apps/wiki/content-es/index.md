@@ -1,6 +1,6 @@
 ---
 title: Wiki de Quorum
-summary: La guía del jugador de Quorum. Aprende qué hace cada Componente, por qué se rompe tu Diseño y cómo arreglarlo, con vistas en vivo del juego.
+summary: La guía del jugador de Quorum, un juego incremental gratuito de diseño de sistemas. Aprende qué hace cada Componente, por qué se rompe tu Diseño y cómo arreglarlo, con vistas en vivo del juego.
 section: tutorials
 order: 0
 ---

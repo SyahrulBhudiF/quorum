@@ -43,7 +43,7 @@ export const view = (model: Model, plain: HtmlBuilder<Message>): Document => {
   // live figure when it nears the viewport. A page whose board is already in view starts at once.
   const hydration = 'visible'
   return {
-    title: page ? (isHome ? t.name : t.title(page.title)) : t.notFoundTitle,
+    title: page ? (isHome ? t.homeTitle : t.title(page.title)) : t.notFoundTitle,
     lang: LOCALE_TAGS[model.locale].lang,
     ...(page ? { canonical: `${WIKI_ORIGIN}${withLocale(model.locale, page.path)}` } : {}),
     body: h.div(

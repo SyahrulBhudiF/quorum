@@ -81,6 +81,11 @@ export const loadAllProse = async (): Promise<void> => {
     await Promise.all(Object.keys(CONTENT[locale]).map((path) => loadOne(locale, path)))
 }
 
+/** Whether a page of another language still shows its English prose, because no translation file
+    exists. Unlike `Prose.fallback` it needs no loaded prose, so the build can ask it for any page. */
+export const isFallback = (locale: Locale, path: string): boolean =>
+  locale !== 'en' && CONTENT.en[path] !== undefined && CONTENT[locale][path] === undefined
+
 /** Whether a page has prose to load, or is generated from the catalog alone. */
 export const needsProse = (locale: Locale, path: string): boolean =>
   CONTENT[locale][path] !== undefined || CONTENT.en[path] !== undefined

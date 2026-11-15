@@ -9,6 +9,7 @@ type Chrome = Omit<Messages, 'islands' | 'options' | 'reference'>
 export const chrome: Chrome = {
   site: {
     name: 'Wiki de Quorum',
+    homeTitle: 'Wiki de Quorum: aprende diseño de sistemas jugando',
     title: (page) => `${page} · Wiki de Quorum`,
     notFoundTitle: 'No encontrada · Wiki de Quorum',
     description: 'Cómo funciona Quorum.',

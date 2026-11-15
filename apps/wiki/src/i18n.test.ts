@@ -408,7 +408,7 @@ test.each(TRANSLATIONS)(
       assets,
     )
     expect(missing).toContain(`<html lang="${tags.lang}"`)
-    expect(missing).toContain('<meta name="robots" content="noindex">')
+    expect(missing).toContain('<meta name="robots" content="noindex,follow">')
     expect(missing).toContain(`property="og:locale" content="${tags.og}"`)
     expect(missing).toContain(`content="${escapeHtml(langOf(locale).t.site.description)}"`)
   },

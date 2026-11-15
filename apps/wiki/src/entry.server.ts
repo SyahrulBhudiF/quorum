@@ -2,7 +2,7 @@ import { Effect } from 'effect'
 import { Server } from 'foldkit/experimental'
 // The prerender solves every board it draws, so it installs the Solver before any page.
 import '@quorum/simulation/host/node'
-import { loadAllProse, loadProse } from './content.ts'
+import { isFallback, loadAllProse, loadProse } from './content.ts'
 import { langOf } from './i18n/lang.ts'
 import {
   LOCALES,
@@ -30,12 +30,15 @@ const escape = (text: string): string =>
 /** The absolute URL of a page's logical path in a language. */
 const urlOf = (locale: Locale, path: string): string => `${WIKI_ORIGIN}${withLocale(locale, path)}`
 
+const AUTHOR = { '@type': 'Person', name: 'elianiva', url: 'https://elianiva.com' }
+
 const website = (locale: Locale) => ({
   '@type': 'WebSite',
   '@id': `${WIKI_ORIGIN}${withLocale(locale, '/')}#website`,
   name: langOf(locale).t.site.name,
   url: `${urlOf(locale, '/')}`,
   inLanguage: LOCALE_TAGS[locale].lang,
+  publisher: AUTHOR,
   about: { '@type': 'VideoGame', name: 'Quorum', url: `${GAME_ORIGIN}/` },
 })
 
@@ -54,6 +57,10 @@ const structuredData = (page: Page): string => {
             headline: page.title,
             description: page.summary,
             url: urlOf(locale, page.path),
+            mainEntityOfPage: urlOf(locale, page.path),
+            image: `${WIKI_ORIGIN}/og.png`,
+            author: AUTHOR,
+            publisher: AUTHOR,
             inLanguage: LOCALE_TAGS[locale].lang,
             isPartOf: { '@id': site['@id'] },
             about: site.about,
@@ -77,10 +84,16 @@ const structuredData = (page: Page): string => {
   return `<script type="application/ld+json">${json.replace(/</g, '\\u003c')}</script>`
 }
 
-/** Every language a page is served in, for search engines: `hreflang` for each, and the English
-    page as the default for a reader whose language the wiki does not have. */
+/** The languages a page is translated into, English included. A page that still shows English
+    prose under another language's prefix is a duplicate of the English page, so search engines
+    get neither its `hreflang` nor a sitemap entry, and the page itself is `noindex`. */
+const translatedLocales = (path: string): ReadonlyArray<Locale> =>
+  LOCALES.filter((locale) => !isFallback(locale, path))
+
+/** Every language a page is translated into, for search engines: `hreflang` for each, and the
+    English page as the default for a reader whose language the wiki does not have. */
 const alternates = (path: string): ReadonlyArray<string> => [
-  ...LOCALES.map(
+  ...translatedLocales(path).map(
     (locale) =>
       `<link rel="alternate" hreflang="${LOCALE_TAGS[locale].lang}" href="${urlOf(locale, path)}">`,
   ),
@@ -102,8 +115,11 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
     lang: LOCALE_TAGS[locale].lang,
     head: [
       `<meta name="description" content="${description}">`,
-      // A 404 is not a page to index.
-      ...(page ? [] : ['<meta name="robots" content="noindex">']),
+      // A 404 and an untranslated page are not pages to index. Elsewhere, allow a large image
+      // preview and unlimited snippets, which Search and Discover otherwise cap.
+      page && !isFallback(locale, page.path)
+        ? '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'
+        : '<meta name="robots" content="noindex,follow">',
       `<meta name="theme-color" content="${THEME_COLORS.light}">`,
       `<script>${themeScript}</script>`,
       `<meta property="og:type" content="${page?.path === '/' ? 'website' : 'article'}">`,
@@ -112,6 +128,7 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
       ...LOCALES.filter((other) => other !== locale).map(
         (other) => `<meta property="og:locale:alternate" content="${LOCALE_TAGS[other].og}">`,
       ),
+      ...(page ? [`<meta property="og:url" content="${urlOf(locale, page.path)}">`] : []),
       `<meta property="og:title" content="${title}">`,
       `<meta property="og:description" content="${description}">`,
       `<meta property="og:image" content="${WIKI_ORIGIN}/og.png">`,
@@ -120,6 +137,10 @@ export const renderDocument: Server.DocumentRenderer = (application, assets) => 
       '<meta property="og:image:height" content="630">',
       `<meta property="og:image:alt" content="${escape(t.ogImageAlt)}">`,
       '<meta name="twitter:card" content="summary_large_image">',
+      `<meta name="twitter:title" content="${title}">`,
+      `<meta name="twitter:description" content="${description}">`,
+      `<meta name="twitter:image" content="${WIKI_ORIGIN}/og.png">`,
+      `<meta name="twitter:image:alt" content="${escape(t.ogImageAlt)}">`,
       ...(page
         ? [
             ...alternates(page.path),
@@ -167,13 +188,19 @@ export const sitemap = (lastmod: (source: string) => string | null): string =>
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ...LOCALES.flatMap((locale) =>
-      pagesFor(locale).map((page) => {
-        const date = page.source ? lastmod(page.source) : null
-        return `<url><loc>${urlOf(locale, page.path)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}${LOCALES.map(
-          (other) =>
-            `<xhtml:link rel="alternate" hreflang="${LOCALE_TAGS[other].lang}" href="${urlOf(other, page.path)}"/>`,
-        ).join('')}</url>`
-      }),
+      pagesFor(locale)
+        .filter((page) => !isFallback(locale, page.path))
+        .map((page) => {
+          const date = page.source ? lastmod(page.source) : null
+          return `<url><loc>${urlOf(locale, page.path)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}${translatedLocales(
+            page.path,
+          )
+            .map(
+              (other) =>
+                `<xhtml:link rel="alternate" hreflang="${LOCALE_TAGS[other].lang}" href="${urlOf(other, page.path)}"/>`,
+            )
+            .join('')}</url>`
+        }),
     ),
     '</urlset>',
     '',

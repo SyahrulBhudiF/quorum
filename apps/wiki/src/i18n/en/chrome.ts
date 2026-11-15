@@ -6,6 +6,7 @@
 export const chrome = {
   site: {
     name: 'Quorum Wiki',
+    homeTitle: 'Quorum Wiki: learn system design by playing',
     title: (page: string) => `${page} · Quorum Wiki`,
     notFoundTitle: 'Not found · Quorum Wiki',
     description: 'How Quorum works.',

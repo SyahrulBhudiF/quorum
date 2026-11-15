@@ -115,19 +115,20 @@
         color: #58cef8;
       }
     </style>
-    <title>Quorum — an incremental systems design game for software engineers</title>
+    <title>Quorum: free system design game, incremental in your browser</title>
     <meta
       name="description"
-      content="Grow a startup from one server in a garage to a public company. Wire components, pick stacks, and fix one real bottleneck after another in an incremental systems design game."
+      content="Learn system design by playing. Grow a startup from one server to a public company: wire load balancers, caches, and databases, and fix one real bottleneck at a time. Free, no download."
     />
     <link rel="canonical" href="https://playquorum.dev/" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Quorum" />
     <meta property="og:url" content="https://playquorum.dev/" />
     <meta
       property="og:title"
-      content="Quorum — an incremental systems design game for software engineers"
+      content="Quorum: free system design game, incremental in your browser"
     />
     <meta
       property="og:description"
@@ -146,7 +147,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Quorum — an incremental systems design game for software engineers"
+      content="Quorum: free system design game, incremental in your browser"
     />
     <meta
       name="twitter:description"
@@ -376,11 +377,13 @@
             "inLanguage": "en"
           },
           {
-            "@type": "VideoGame",
+            "@type": ["VideoGame", "WebApplication"],
             "name": "Quorum",
             "url": "https://playquorum.dev/",
             "image": "https://playquorum.dev/og.png",
-            "description": "An incremental systems design game for software engineers. Grow a startup from one server in a garage to a public company.",
+            "description": "A free incremental system design game that runs in the browser. Grow a startup from one server in a garage to a public company by wiring load balancers, caches, and databases, and fixing one real bottleneck at a time.",
+            "browserRequirements": "Requires JavaScript",
+            "keywords": "system design game, incremental game, browser game, learn system design, scaling simulator, idle game",
             "genre": ["Incremental", "Simulation", "Educational"],
             "gamePlatform": "Web browser",
             "applicationCategory": "GameApplication",
@@ -405,13 +408,29 @@
   <body>
     <!-- Crawlers that run no JavaScript read this. -->
     <noscript>
-      <h1>Quorum</h1>
+      <h1>Quorum: a free system design game</h1>
       <p>
-        An incremental systems design game for software engineers. Grow a startup from one server in
-        a garage to a public company. Quorum runs in the browser and needs JavaScript.
+        Quorum is an incremental browser game that teaches system design. You are the first engineer
+        of a startup. Wire load balancers, app servers, caches, queues, and databases on a board,
+        watch real traffic flow through your design, and fix one bottleneck after another as the
+        company grows from a garage to a public company. It is free, runs in the browser, and needs
+        JavaScript.
       </p>
+      <h2>Learn while you play</h2>
       <ul>
-        <li><a href="https://wiki.playquorum.dev/">Wiki</a></li>
+        <li>
+          <a href="https://wiki.playquorum.dev/tutorials/first-company">Your first Company</a>
+        </li>
+        <li>
+          <a href="https://wiki.playquorum.dev/components">Every Component, from cache to CDN</a>
+        </li>
+        <li><a href="https://wiki.playquorum.dev/patterns">System design patterns</a></li>
+        <li>
+          <a href="https://wiki.playquorum.dev/explanation/latency">Latency and percentiles</a>
+        </li>
+        <li><a href="https://wiki.playquorum.dev/">Quorum Wiki</a></li>
+      </ul>
+      <ul>
         <li><a href="https://github.com/elianiva/quorum">Source code</a></li>
         <li><a href="https://ko-fi.com/elianiva">Support on Ko-fi</a></li>
       </ul>
