@@ -1,5 +1,6 @@
 ---
 title: Read replicas
+seoTitle: Read replicas: scale database reads
 summary: Copy the database to followers that serve reads, so read traffic scales out while one primary takes the writes.
 section: patterns
 group: Scaling reads and compute

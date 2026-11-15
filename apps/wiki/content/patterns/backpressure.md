@@ -1,5 +1,6 @@
 ---
 title: Backpressure
+seoTitle: Backpressure in distributed systems
 summary: Make a slow consumer push back on its producers, so a queue stays bounded instead of growing until memory or latency runs out.
 section: patterns
 group: Messaging and async

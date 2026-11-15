@@ -1,5 +1,6 @@
 ---
 title: Load shedding
+seoTitle: Load shedding: drop work to stay up
 summary: When demand passes capacity, refuse the cheapest work early so the work you keep still finishes on time.
 section: patterns
 group: Resilience

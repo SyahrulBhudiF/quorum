@@ -1,5 +1,6 @@
 ---
 title: Load balancing algorithms
+seoTitle: Load balancing algorithms compared
 summary: Pick how a load balancer chooses among servers, because the right rule depends on whether servers differ and whether requests do.
 section: patterns
 group: Scaling reads and compute

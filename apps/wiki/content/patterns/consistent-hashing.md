@@ -1,5 +1,6 @@
 ---
 title: Consistent hashing
+seoTitle: Consistent hashing explained: ring and vnodes
 summary: Place keys on a ring of servers, so adding or removing one server moves only its share of the keys instead of nearly all of them.
 section: patterns
 group: Scaling data

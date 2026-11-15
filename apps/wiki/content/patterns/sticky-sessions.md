@@ -1,5 +1,6 @@
 ---
 title: Sticky sessions
+seoTitle: Sticky sessions: how they work, what they cost
 summary: Sticky sessions make a load balancer send a client back to the server it used first, so that server's memory can hold the client's state.
 section: patterns
 group: Outside the game

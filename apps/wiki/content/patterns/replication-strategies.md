@@ -1,5 +1,6 @@
 ---
 title: Replication strategies
+seoTitle: Database replication strategies explained
 summary: Choose how copies of the data stay in step, trading write latency and lost writes against stale reads and complexity.
 section: patterns
 group: Scaling data

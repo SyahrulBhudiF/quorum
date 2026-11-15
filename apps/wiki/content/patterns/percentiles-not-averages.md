@@ -1,5 +1,6 @@
 ---
 title: Percentiles, not averages
+seoTitle: Why percentiles beat averages for latency
 summary: Report p50, p95 and p99 instead of the mean, because a mean averages away the slow requests that real users complain about.
 section: patterns
 group: Operate and observe

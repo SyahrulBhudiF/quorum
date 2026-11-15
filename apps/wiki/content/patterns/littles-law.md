@@ -1,5 +1,6 @@
 ---
 title: Little's law
+seoTitle: Little's law explained, with examples
 summary: The number of requests inside a system equals the arrival rate times the time each one spends there, which sizes every pool, queue and connection limit.
 section: patterns
 group: Foundations

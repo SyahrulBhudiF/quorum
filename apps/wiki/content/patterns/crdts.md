@@ -1,5 +1,6 @@
 ---
 title: CRDTs
+seoTitle: CRDTs explained: merge without a leader
 summary: A conflict-free replicated data type lets every replica accept writes on its own and still merge to the same state without coordination.
 section: patterns
 group: Outside the game

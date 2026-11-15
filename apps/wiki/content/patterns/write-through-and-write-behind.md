@@ -1,5 +1,6 @@
 ---
 title: Write-through and write-behind
+seoTitle: Write-through vs write-behind caching
 summary: Let the cache take writes too, either passing each one straight on to the database or holding it briefly, so reads never see an old value.
 section: patterns
 group: Scaling reads and compute

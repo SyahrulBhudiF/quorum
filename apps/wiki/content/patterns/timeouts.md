@@ -1,5 +1,6 @@
 ---
 title: Timeouts
+seoTitle: Timeouts in distributed systems
 summary: Give every network call a deadline, because a call that waits forever holds a thread, a connection and a user hostage.
 section: patterns
 group: Resilience

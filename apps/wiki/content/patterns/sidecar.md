@@ -1,5 +1,6 @@
 ---
 title: Sidecar
+seoTitle: Sidecar pattern explained
 summary: A sidecar runs next to the main application in its own process or container and handles shared chores like logging, proxying and security.
 section: patterns
 group: Outside the game

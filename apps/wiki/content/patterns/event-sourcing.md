@@ -1,5 +1,6 @@
 ---
 title: Event sourcing
+seoTitle: Event sourcing explained, and what it costs
 summary: Event sourcing stores every change as an event in an append-only log and builds current state by replaying it.
 section: patterns
 group: Outside the game

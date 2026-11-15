@@ -1,5 +1,6 @@
 ---
 title: Latency and percentiles
+seoTitle: Latency percentiles: p50, p95, p99 explained
 summary: Where a request's time goes, why the mean hides your slowest users, and how the game computes p50, p95, and p99.
 section: explanation
 order: 2

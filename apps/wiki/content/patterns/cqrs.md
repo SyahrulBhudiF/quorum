@@ -1,5 +1,6 @@
 ---
 title: CQRS
+seoTitle: CQRS explained: split reads from writes
 summary: CQRS uses one model to change data and a different one to read it, so each side can be shaped and scaled for its own job.
 section: patterns
 group: Outside the game

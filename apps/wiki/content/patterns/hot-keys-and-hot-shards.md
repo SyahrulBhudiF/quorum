@@ -1,5 +1,6 @@
 ---
 title: Hot keys and hot shards
+seoTitle: Hot keys and hot shards: causes and fixes
 summary: When one key or one shard takes a large share of the traffic, adding servers does not help, so spread that key or change the shard key.
 section: patterns
 group: Scaling data

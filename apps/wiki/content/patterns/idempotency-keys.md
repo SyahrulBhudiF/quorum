@@ -1,5 +1,6 @@
 ---
 title: Idempotency keys
+seoTitle: Idempotency keys: make retries safe
 summary: Tag each write with a unique key the server remembers, so a retried request does the work once.
 section: patterns
 group: Messaging and async

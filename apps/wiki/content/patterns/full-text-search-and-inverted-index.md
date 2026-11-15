@@ -1,5 +1,6 @@
 ---
 title: Full-text search and the inverted index
+seoTitle: Full-text search and the inverted index
 summary: Index every word to the documents that hold it in a separate search engine, so a query reads a few short lists instead of scanning every row.
 section: patterns
 group: Scaling data

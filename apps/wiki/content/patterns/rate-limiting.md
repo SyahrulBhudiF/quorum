@@ -1,5 +1,6 @@
 ---
 title: Rate limiting
+seoTitle: Rate limiting algorithms explained
 summary: Cap how many requests a client or a service may send per second, so one noisy caller cannot use up capacity that everyone shares.
 section: patterns
 group: Resilience

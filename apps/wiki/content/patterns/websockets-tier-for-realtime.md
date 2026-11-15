@@ -1,5 +1,6 @@
 ---
 title: A WebSockets tier for realtime
+seoTitle: WebSockets for real-time systems
 summary: Hold realtime connections open on a Realtime Hub that runs a runtime built for them, and route only realtime traffic to it, so chat and live updates stop eating App Server workers.
 section: patterns
 group: Scaling steps

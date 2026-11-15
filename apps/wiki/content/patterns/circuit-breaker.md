@@ -1,5 +1,6 @@
 ---
 title: Circuit breaker
+seoTitle: Circuit breaker pattern explained
 summary: Stop calling a dependency that keeps failing, answer fast with a fallback, and probe now and then to see whether it has recovered.
 section: patterns
 group: Resilience

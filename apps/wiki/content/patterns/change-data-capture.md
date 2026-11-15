@@ -1,5 +1,6 @@
 ---
 title: Change data capture
+seoTitle: Change data capture (CDC) explained
 summary: Read the database's change log and publish each change as an event, so search, warehouse, and cache stay in step without the app writing twice.
 section: patterns
 group: Messaging and async

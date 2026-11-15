@@ -1,5 +1,6 @@
 ---
 title: Blue-green and canary deploys
+seoTitle: Blue-green and canary deployments explained
 summary: Ship a new version beside the old one, or to a few users first, so a bad release reaches few people and rolls back fast.
 section: patterns
 group: Deploys and change

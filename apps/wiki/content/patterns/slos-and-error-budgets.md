@@ -1,5 +1,6 @@
 ---
 title: SLOs and error budgets
+seoTitle: SLOs and error budgets explained
 summary: Pick a reliability target users would notice, treat the failures it allows as a budget, and let the remaining budget decide whether to ship or to harden.
 section: patterns
 group: Operate and observe

@@ -1,5 +1,6 @@
 ---
 title: CDN push and pull
+seoTitle: CDN push vs pull explained
 summary: Put copies of your content on servers near users, either filling them on demand from your origin (pull) or uploading them yourself (push).
 section: patterns
 group: Scaling reads and compute

@@ -1,5 +1,6 @@
 ---
 title: CAP and PACELC
+seoTitle: CAP theorem and PACELC explained
 summary: When the network splits, a replicated store must refuse some requests or serve stale ones, and even when it is healthy it trades latency for consistency.
 section: patterns
 group: Foundations

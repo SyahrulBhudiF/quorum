@@ -1,5 +1,6 @@
 ---
 title: Chaos engineering
+seoTitle: Chaos engineering: break it on purpose
 summary: Break your own system on a schedule and under watch, so you find the weak link before an outage does.
 section: patterns
 group: Resilience

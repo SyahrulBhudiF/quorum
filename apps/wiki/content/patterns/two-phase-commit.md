@@ -1,5 +1,6 @@
 ---
 title: Two-phase commit
+seoTitle: Two-phase commit: how it works and blocks
 summary: Two-phase commit makes several databases commit or abort one transaction together, by voting first and committing second, at the price of blocking when the coordinator fails.
 section: patterns
 group: Outside the game

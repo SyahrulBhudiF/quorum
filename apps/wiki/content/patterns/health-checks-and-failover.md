@@ -1,5 +1,6 @@
 ---
 title: Health checks and failover
+seoTitle: Health checks and failover explained
 summary: Probe each server and stop sending it traffic when it stops answering, then move to a standby when a whole zone goes.
 section: patterns
 group: Resilience

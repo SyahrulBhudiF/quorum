@@ -1,5 +1,6 @@
 ---
 title: Consensus and leader election
+seoTitle: Consensus and leader election explained
 summary: Make a group of servers agree on one order of writes through a majority vote, so the data stays correct while a minority fails.
 section: patterns
 group: Scaling data

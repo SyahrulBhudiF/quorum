@@ -1,5 +1,6 @@
 ---
 title: Sharding
+seoTitle: Database sharding explained: when and how
 summary: Split one dataset across several databases by a key, so writes and storage scale past what one machine holds.
 section: patterns
 group: Scaling data

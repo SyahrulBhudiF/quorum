@@ -1,5 +1,6 @@
 ---
 title: Strangler pattern
+seoTitle: Strangler fig pattern explained
 summary: Replace an old system piece by piece behind one front door, so the new one takes over without a big-bang rewrite.
 section: patterns
 group: Deploys and change

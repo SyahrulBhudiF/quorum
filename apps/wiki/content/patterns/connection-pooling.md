@@ -1,5 +1,6 @@
 ---
 title: Connection pooling
+seoTitle: Database connection pooling explained
 summary: Put a pooler between the app and the database so many app connections share a few database connections.
 section: patterns
 group: Scaling reads and compute

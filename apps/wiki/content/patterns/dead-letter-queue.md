@@ -1,5 +1,6 @@
 ---
 title: Dead-letter queue
+seoTitle: Dead-letter queues explained
 summary: Move a message that keeps failing to a separate queue after a few attempts, so one bad message cannot block the workers.
 section: patterns
 group: Messaging and async

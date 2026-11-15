@@ -1,5 +1,6 @@
 ---
 title: Bulkhead
+seoTitle: Bulkhead pattern explained
 summary: Give each dependency or customer its own pool of capacity, so one failing part cannot drain the resources every other part needs.
 section: patterns
 group: Resilience

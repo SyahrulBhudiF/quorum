@@ -1,5 +1,6 @@
 ---
 title: Layer 4 and layer 7 load balancing
+seoTitle: Layer 4 vs layer 7 load balancing
 summary: Choose between a balancer that forwards TCP connections quickly and one that reads each HTTP request so it can route by content.
 section: patterns
 group: Scaling reads and compute

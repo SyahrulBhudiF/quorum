@@ -1,5 +1,6 @@
 ---
 title: Capacity, utilization, and queues
+seoTitle: Queueing and utilization: why servers slow down
 summary: Why a Node gets slow long before it is full, what the amber and red cards mean, and how Queues trade waiting for safety.
 section: explanation
 order: 3

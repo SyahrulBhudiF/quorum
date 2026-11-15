@@ -1,5 +1,6 @@
 ---
 title: Retry with backoff and jitter
+seoTitle: Retry with exponential backoff and jitter
 summary: Retry a failed call after a growing, randomized wait, so a brief fault heals instead of turning into a retry storm.
 section: patterns
 group: Resilience

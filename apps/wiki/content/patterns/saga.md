@@ -1,5 +1,6 @@
 ---
 title: Saga
+seoTitle: Saga pattern explained
 summary: A saga runs a business transaction as a chain of local transactions across services and undoes finished steps with compensating actions when a later step fails.
 section: patterns
 group: Outside the game

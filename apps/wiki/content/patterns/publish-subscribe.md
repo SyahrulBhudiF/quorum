@@ -1,5 +1,6 @@
 ---
 title: Publish and subscribe
+seoTitle: Publish-subscribe pattern explained
 summary: Publish each event once to a topic and let every interested service read it, so producers stop knowing who consumes their events.
 section: patterns
 group: Messaging and async

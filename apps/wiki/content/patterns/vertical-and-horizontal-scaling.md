@@ -1,5 +1,6 @@
 ---
 title: Vertical and horizontal scaling
+seoTitle: Vertical vs horizontal scaling: which to pick
 summary: Make one machine bigger, or run more machines, and know which one to reach for first.
 section: patterns
 group: Scaling reads and compute

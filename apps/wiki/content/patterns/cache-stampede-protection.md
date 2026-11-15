@@ -1,5 +1,6 @@
 ---
 title: Cache stampede protection
+seoTitle: Cache stampede: how to prevent it
 summary: Stop many readers from rebuilding the same expired cache key at once, so one popular key cannot knock the database over.
 section: patterns
 group: Scaling reads and compute

@@ -1,5 +1,6 @@
 ---
 title: Cache-aside
+seoTitle: Cache-aside pattern explained
 summary: Keep hot reads in memory and let the app fill the cache on a miss, so the database serves each popular row once instead of once per request.
 section: patterns
 group: Scaling reads and compute

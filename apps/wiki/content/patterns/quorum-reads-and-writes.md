@@ -1,5 +1,6 @@
 ---
 title: Quorum reads and writes
+seoTitle: Quorum reads and writes explained
 summary: Keep several copies of each key and let a read and a write each ask enough of them to overlap, so reads see the latest write without a leader.
 section: patterns
 group: Scaling data

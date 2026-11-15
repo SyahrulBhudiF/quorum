@@ -1,5 +1,6 @@
 ---
 title: Transactional outbox
+seoTitle: Transactional outbox pattern explained
 summary: Write the event in the same database transaction as the change, then publish it from there, so the database and the broker never disagree.
 section: patterns
 group: Messaging and async

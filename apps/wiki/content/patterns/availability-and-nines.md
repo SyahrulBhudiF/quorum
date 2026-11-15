@@ -1,5 +1,6 @@
 ---
 title: Availability and the nines
+seoTitle: Availability and nines: 99.9% vs 99.99%
 summary: Each extra nine of uptime cuts the allowed downtime tenfold, and every hard dependency in a chain pulls the total down.
 section: patterns
 group: Foundations

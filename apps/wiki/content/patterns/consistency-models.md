@@ -1,5 +1,6 @@
 ---
 title: Consistency models
+seoTitle: Consistency models: strong to eventual
 summary: A consistency model says which values a read may return after a write, and the stronger ones cost latency and availability.
 section: patterns
 group: Foundations

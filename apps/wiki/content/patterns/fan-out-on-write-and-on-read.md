@@ -1,5 +1,6 @@
 ---
 title: Fan-out on write and on read
+seoTitle: Fan-out on write vs fan-out on read
 summary: Build a user's feed either when someone posts, by copying the post to every follower, or when the user reads, by gathering posts from everyone they follow.
 section: patterns
 group: Scaling reads and compute

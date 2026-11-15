@@ -1,5 +1,6 @@
 ---
 title: Tail latency
+seoTitle: Tail latency explained: why p99 matters
 summary: The slowest few percent of requests set how a service feels, and a request that fans out to many servers meets that tail almost every time.
 section: patterns
 group: Foundations
