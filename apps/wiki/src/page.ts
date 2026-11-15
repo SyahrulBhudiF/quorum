@@ -15,6 +15,8 @@ export type Page = Readonly<{
   /** The logical path, without a language prefix: `/glossary/latency` in every language. */
   path: string
   title: string
+  /** The title a search result shows, when it differs from `title`. */
+  seoTitle?: string | undefined
   /** One sentence: the search result and the page's description. */
   summary: string
   section: Section

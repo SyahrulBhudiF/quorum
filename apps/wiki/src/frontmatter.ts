@@ -26,6 +26,8 @@ export const Frontmatter = Schema.Struct({
   order: Schema.optionalKey(Schema.String),
   /** The Era index (0 = Garage) where a reader first needs the page. */
   era: Schema.optionalKey(Schema.String),
+  /** The title a search result shows, written for the query the page answers. The page keeps `title` for the navigation. */
+  seoTitle: Schema.optionalKey(Schema.String),
   /** Other words a reader may search for, comma-separated. */
   aliases: Schema.optionalKey(Schema.String),
   /** The design page this page rewrites, for readers who want the source. */

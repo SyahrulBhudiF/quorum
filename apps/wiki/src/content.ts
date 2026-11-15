@@ -176,6 +176,7 @@ export const authoredPages = (locale: Locale): ReadonlyArray<Page> =>
         locale,
         path,
         title: text.title,
+        seoTitle: own === null ? meta.seoTitle : own.frontmatter?.seoTitle,
         summary: text.summary,
         section: meta.section,
         parent: null,

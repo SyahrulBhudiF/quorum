@@ -2,7 +2,7 @@ import { Effect } from 'effect'
 import { Server } from 'foldkit/experimental'
 // The prerender solves every board it draws, so it installs the Solver before any page.
 import '@quorum/simulation/host/node'
-import { isFallback, loadAllProse, loadProse } from './content.ts'
+import { documentOf, isFallback, loadAllProse, loadProse } from './content.ts'
 import { langOf } from './i18n/lang.ts'
 import {
   LOCALES,
@@ -16,6 +16,7 @@ import { init, normalize } from './main.ts'
 import { markdownPath } from './markdown.ts'
 import type { Page } from './page.ts'
 import { PAGES, pageAt, pageIn, pagesFor } from './pages.ts'
+import { plain } from './prose.ts'
 import { indexJson } from './search.ts'
 import { GAME_ORIGIN, WIKI_ORIGIN } from './site.ts'
 import { THEME_COLORS, themeScript } from './theme.ts'
@@ -42,6 +43,27 @@ const website = (locale: Locale) => ({
   about: { '@type': 'VideoGame', name: 'Quorum', url: `${GAME_ORIGIN}/` },
 })
 
+/** The questions and answers of an English page's "Common questions" section: each third-level
+    heading is a question, and the paragraphs under it are the answer. */
+const questionsOf = (path: string): ReadonlyArray<{ question: string; answer: string }> => {
+  const blocks = documentOf(path)?.blocks ?? []
+  const found: Array<{ question: string; answer: Array<string> }> = []
+  let inside = false
+  for (const block of blocks) {
+    if (block._tag === 'Heading' && block.level === 2)
+      inside = plain(block.content) === 'Common questions'
+    else if (inside && block._tag === 'Heading' && block.level === 3)
+      found.push({ question: plain(block.content), answer: [] })
+    else if (inside && block._tag === 'Paragraph') found.at(-1)?.answer.push(plain(block.content))
+  }
+  return found
+    .filter((entry) => entry.answer.length > 0)
+    .map((entry) => ({ question: entry.question, answer: entry.answer.join(' ') }))
+}
+
+/** The sections whose pages teach something, so search engines can call them learning resources. */
+const TEACHING: ReadonlySet<string> = new Set(['tutorials', 'guides', 'explanation', 'patterns'])
+
 /* Structured data (schema.org): the site on its home page, and on every other page the article
    and the trail the page shows above its title (src/components/article.ts). */
 const structuredData = (page: Page): string => {
@@ -53,7 +75,15 @@ const structuredData = (page: Page): string => {
       ? [site]
       : [
           {
-            '@type': 'TechArticle',
+            '@type': TEACHING.has(page.section)
+              ? ['TechArticle', 'LearningResource']
+              : 'TechArticle',
+            ...(TEACHING.has(page.section)
+              ? {
+                  learningResourceType: page.section === 'tutorials' ? 'tutorial' : 'article',
+                  teaches: page.title,
+                }
+              : {}),
             headline: page.title,
             description: page.summary,
             url: urlOf(locale, page.path),
@@ -65,6 +95,18 @@ const structuredData = (page: Page): string => {
             isPartOf: { '@id': site['@id'] },
             about: site.about,
           },
+          ...(locale === 'en' && questionsOf(page.path).length > 0
+            ? [
+                {
+                  '@type': 'FAQPage',
+                  mainEntity: questionsOf(page.path).map(({ question, answer }) => ({
+                    '@type': 'Question',
+                    name: question,
+                    acceptedAnswer: { '@type': 'Answer', text: answer },
+                  })),
+                },
+              ]
+            : []),
           ...(parent
             ? [
                 {
