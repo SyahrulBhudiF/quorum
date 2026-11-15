@@ -1,5 +1,6 @@
 ---
 title: 変更データキャプチャ
+seoTitle: 変更データキャプチャ (CDC) を解説
 summary: データベースの変更ログを読み、各変更をイベントとして公開するので、検索やウェアハウス、キャッシュがアプリの二重書き込みなしで追従します。
 section: patterns
 group: Messaging and async

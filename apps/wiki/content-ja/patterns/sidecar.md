@@ -1,5 +1,6 @@
 ---
 title: サイドカー
+seoTitle: サイドカーパターンを解説
 summary: サイドカーは、メインのアプリケーションの隣で独自のプロセスやコンテナとして動き、ログ、プロキシ、セキュリティといった共通の雑事を引き受けます。
 section: patterns
 group: Outside the game

@@ -1,5 +1,6 @@
 ---
 title: Write-through y write-behind
+seoTitle: Caché write-through frente a write-behind
 summary: Deja que la caché también reciba escrituras, ya sea pasándolas directamente a la base de datos o reteniéndolas un momento, para que las lecturas nunca vean un valor viejo.
 section: patterns
 group: Scaling reads and compute

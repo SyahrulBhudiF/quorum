@@ -1,5 +1,6 @@
 ---
 title: コンセンサスとリーダー選出
+seoTitle: コンセンサスとリーダー選出を解説
 summary: サーバーの集団が多数決で書き込みの 1 つの順序に合意するようにして、少数が落ちてもデータが正しいままになるようにします。
 section: patterns
 group: Scaling data

@@ -1,5 +1,6 @@
 ---
 title: Claves de idempotencia
+seoTitle: Claves de idempotencia: reintentos seguros
 summary: Etiqueta cada escritura con una clave única que el servidor recuerda, para que una petición reintentada haga el trabajo una sola vez.
 section: patterns
 group: Messaging and async

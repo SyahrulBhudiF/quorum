@@ -1,5 +1,6 @@
 ---
 title: ロードシェディング
+seoTitle: ロードシェディング: 処理を捨てて落ちないようにする
 summary: 需要が容量を超えたら、最も安い処理を早めに断り、残した処理が時間どおりに終わるようにします。
 section: patterns
 group: Resilience

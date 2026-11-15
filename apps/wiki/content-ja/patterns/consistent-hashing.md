@@ -1,5 +1,6 @@
 ---
 title: コンシステントハッシュ
+seoTitle: コンシステントハッシュを解説: リングと仮想ノード
 summary: キーをサーバーの輪に置くので、サーバーを 1 つ足したり外したりしても、ほとんどすべてではなくその分のキーだけが動きます。
 section: patterns
 group: Scaling data

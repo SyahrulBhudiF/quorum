@@ -1,5 +1,6 @@
 ---
 title: Captura de cambios de datos
+seoTitle: Captura de cambios de datos (CDC) explicada
 summary: Lee el registro de cambios de la base de datos y publica cada cambio como un evento, para que el buscador, el almacén de datos y la caché sigan al día sin que la app escriba dos veces.
 section: patterns
 group: Messaging and async

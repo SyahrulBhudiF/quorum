@@ -1,5 +1,6 @@
 ---
 title: テールレイテンシ
+seoTitle: テールレイテンシを解説: p99 が重要な理由
 summary: 最も遅い数パーセントのリクエストがサービスの体感を決め、多数のサーバーにファンアウトするリクエストはほぼ毎回そのテールに当たります。
 section: patterns
 group: Foundations

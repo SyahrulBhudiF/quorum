@@ -1,5 +1,6 @@
 ---
 title: Publicación y suscripción
+seoTitle: Patrón de publicación y suscripción explicado
 summary: Publica cada evento una vez en un tema y deja que lo lean todos los servicios interesados, para que los productores dejen de saber quién consume sus eventos.
 section: patterns
 group: Messaging and async

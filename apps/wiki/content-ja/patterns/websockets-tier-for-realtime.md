@@ -1,5 +1,6 @@
 ---
 title: リアルタイムのための WebSocket 層
+seoTitle: リアルタイムシステムのための WebSocket
 summary: リアルタイムの接続を、そのために作られたランタイムで動くリアルタイムハブに保ち、リアルタイムのトラフィックだけをそこへ流し、チャットとライブ更新がアプリサーバーのワーカーを食わないようにします。
 section: patterns
 group: Scaling steps

@@ -1,5 +1,6 @@
 ---
 title: CRDT（競合しない複製データ型）
+seoTitle: CRDT を解説: リーダーなしでマージする
 summary: 競合しない複製データ型は、各レプリカが自分で書き込みを受け付け、それでも調整なしに同じ状態へマージできるようにします。
 section: patterns
 group: Outside the game

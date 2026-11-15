@@ -1,5 +1,6 @@
 ---
 title: サーキットブレーカー
+seoTitle: サーキットブレーカーパターンを解説
 summary: 失敗し続ける依存先の呼び出しを止め、フォールバックですばやく答え、ときどき探って回復したかを見ます。
 section: patterns
 group: Resilience

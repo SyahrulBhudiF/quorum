@@ -1,5 +1,6 @@
 ---
 title: Commit en dos fases
+seoTitle: Commit en dos fases: cómo funciona y cuándo bloquea
 summary: El commit en dos fases hace que varias bases de datos confirmen o aborten una transacción juntas, votando primero y confirmando después, al precio de bloquearse cuando falla el coordinador.
 section: patterns
 group: Outside the game

@@ -1,5 +1,6 @@
 ---
 title: Bulkhead
+seoTitle: Patrón Bulkhead explicado
 summary: Da a cada dependencia o cliente su propio pool de capacidad, para que una parte que falla no pueda vaciar los recursos que necesitan todas las demás.
 section: patterns
 group: Resilience

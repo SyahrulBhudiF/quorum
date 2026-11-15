@@ -1,5 +1,6 @@
 ---
 title: カオスエンジニアリング
+seoTitle: カオスエンジニアリング: わざと壊して備える
 summary: 自分のシステムを定期的に、監視の下で壊して、障害に先に弱いリンクを見つけます。
 section: patterns
 group: Resilience

@@ -1,5 +1,6 @@
 ---
 title: Fan-out en escritura y en lectura
+seoTitle: Fan-out en escritura frente a fan-out en lectura
 summary: Construye el feed de un usuario o cuando alguien publica, copiando la publicación a cada seguidor, o cuando el usuario lee, reuniendo las publicaciones de todos a quienes sigue.
 section: patterns
 group: Scaling reads and compute

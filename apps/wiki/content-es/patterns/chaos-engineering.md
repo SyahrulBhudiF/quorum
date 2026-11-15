@@ -1,5 +1,6 @@
 ---
 title: Ingeniería del caos
+seoTitle: Ingeniería del caos: rompe el sistema a propósito
 summary: Rompe tu propio sistema en un horario y bajo vigilancia, para encontrar el eslabón débil antes de que lo haga una caída.
 section: patterns
 group: Resilience

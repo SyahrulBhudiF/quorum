@@ -1,5 +1,6 @@
 ---
 title: キャッシュスタンピード対策
+seoTitle: キャッシュスタンピードの防ぎ方
 summary: 多くの読み手が同じ期限切れのキャッシュキーを一度に再構築しないようにして、1 つの人気のキーがデータベースを倒せないようにします。
 section: patterns
 group: Scaling reads and compute

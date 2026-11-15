@@ -1,5 +1,6 @@
 ---
 title: バルクヘッド
+seoTitle: バルクヘッドパターンを解説
 summary: 依存先や顧客ごとに容量のプールを分け、1 つの壊れた部分が他のすべてが必要とする資源を枯らせないようにします。
 section: patterns
 group: Resilience

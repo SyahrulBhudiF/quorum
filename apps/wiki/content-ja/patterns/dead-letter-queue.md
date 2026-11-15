@@ -1,5 +1,6 @@
 ---
 title: デッドレターキュー
+seoTitle: デッドレターキューを解説
 summary: 何度試しても失敗するメッセージを数回の試行の後に別のキューへ移し、1 つの悪いメッセージがワーカーを塞がないようにします。
 section: patterns
 group: Messaging and async

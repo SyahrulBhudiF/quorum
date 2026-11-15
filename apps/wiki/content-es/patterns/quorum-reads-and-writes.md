@@ -1,5 +1,6 @@
 ---
 title: Lecturas y escrituras de quórum
+seoTitle: Lecturas y escrituras de quórum explicadas
 summary: Mantén varias copias de cada clave y haz que una lectura y una escritura consulten cada una las suficientes para solaparse, de modo que las lecturas vean la última escritura sin un líder.
 section: patterns
 group: Scaling data

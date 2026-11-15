@@ -1,5 +1,6 @@
 ---
 title: Disponibilidad y los nueves
+seoTitle: Disponibilidad y los nueves: 99,9 % frente a 99,99 %
 summary: Cada nueve extra de disponibilidad reduce a una décima parte el tiempo de caída permitido, y cada dependencia dura de una cadena baja el total.
 section: patterns
 group: Foundations

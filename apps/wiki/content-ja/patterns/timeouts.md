@@ -1,5 +1,6 @@
 ---
 title: タイムアウト
+seoTitle: 分散システムのタイムアウト
 summary: すべてのネットワーク呼び出しに期限を与えます。永遠に待つ呼び出しはスレッドと接続とユーザーを人質にするためです。
 section: patterns
 group: Resilience

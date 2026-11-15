@@ -1,5 +1,6 @@
 ---
 title: Estrategias de replicación
+seoTitle: Estrategias de replicación de bases de datos explicadas
 summary: Elige cómo se mantienen sincronizadas las copias de los datos, cambiando latencia de escritura y escrituras perdidas por lecturas obsoletas y complejidad.
 section: patterns
 group: Scaling data

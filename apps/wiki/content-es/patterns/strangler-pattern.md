@@ -1,5 +1,6 @@
 ---
 title: Patrón strangler
+seoTitle: Patrón strangler fig explicado
 summary: Reemplaza un sistema antiguo pieza a pieza tras una única puerta de entrada, para que el nuevo tome el relevo sin una reescritura de golpe.
 section: patterns
 group: Deploys and change

@@ -1,5 +1,6 @@
 ---
 title: バックプレッシャー
+seoTitle: 分散システムのバックプレッシャー
 summary: 遅いコンシューマーがプロデューサーを押し返すようにして、キューがメモリやレイテンシを使い切るまで伸び続けるのではなく、上限を保つようにします。
 section: patterns
 group: Messaging and async

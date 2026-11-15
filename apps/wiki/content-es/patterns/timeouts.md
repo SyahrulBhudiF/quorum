@@ -1,5 +1,6 @@
 ---
 title: Tiempos de espera
+seoTitle: Tiempos de espera en sistemas distribuidos
 summary: Da a cada llamada de red un plazo, porque una llamada que espera para siempre retiene como rehenes un hilo, una conexión y un usuario.
 section: patterns
 group: Resilience

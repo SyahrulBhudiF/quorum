@@ -1,5 +1,6 @@
 ---
 title: Algoritmos de balanceo de carga
+seoTitle: Algoritmos de balanceo de carga comparados
 summary: Elige cómo un balanceador de carga escoge entre servidores, porque la regla adecuada depende de si los servidores difieren y de si las peticiones difieren.
 section: patterns
 group: Scaling reads and compute

@@ -1,5 +1,6 @@
 ---
 title: Percentiles, no promedios
+seoTitle: Por qué los percentiles superan al promedio en latencia
 summary: Informa de p50, p95 y p99 en lugar de la media, porque la media diluye las peticiones lentas de las que se quejan los usuarios reales.
 section: patterns
 group: Operate and observe

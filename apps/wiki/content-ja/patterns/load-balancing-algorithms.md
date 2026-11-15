@@ -1,5 +1,6 @@
 ---
 title: ロードバランシングのアルゴリズム
+seoTitle: ロードバランシングのアルゴリズムを比較
 summary: ロードバランサーがサーバーを選ぶ規則を決めます。正しい規則は、サーバーが違うか、リクエストが違うかで変わります。
 section: patterns
 group: Scaling reads and compute

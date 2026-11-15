@@ -1,5 +1,6 @@
 ---
 title: シャーディング
+seoTitle: データベースのシャーディングを解説: いつ、どうやるか
 summary: 1 つのデータセットをキーで複数のデータベースに分け、書き込みと保存を 1 台のマシンの限界より先へスケールさせます。
 section: patterns
 group: Scaling data

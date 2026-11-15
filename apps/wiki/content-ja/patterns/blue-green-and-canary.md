@@ -1,5 +1,6 @@
 ---
 title: ブルーグリーンとカナリアのデプロイ
+seoTitle: ブルーグリーンデプロイとカナリアデプロイを解説
 summary: 新しいバージョンを古いものの隣に、または少数のユーザーに先に出荷するので、悪いリリースが届く範囲は狭く、ロールバックは速くなります。
 section: patterns
 group: Deploys and change

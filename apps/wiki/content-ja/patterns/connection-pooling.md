@@ -1,5 +1,6 @@
 ---
 title: コネクションプーリング
+seoTitle: データベースのコネクションプーリングを解説
 summary: アプリとデータベースの間にプーラーを置き、多数のアプリ接続が少数のデータベース接続を共有するようにします。
 section: patterns
 group: Scaling reads and compute

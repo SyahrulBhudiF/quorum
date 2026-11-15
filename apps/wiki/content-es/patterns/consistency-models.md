@@ -1,5 +1,6 @@
 ---
 title: Modelos de consistencia
+seoTitle: Modelos de consistencia: de fuerte a eventual
 summary: Un modelo de consistencia dice qué valores puede devolver una lectura tras una escritura, y los más fuertes cuestan latencia y disponibilidad.
 section: patterns
 group: Foundations

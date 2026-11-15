@@ -1,5 +1,6 @@
 ---
 title: リトルの法則
+seoTitle: リトルの法則を例で解説
 summary: システム内にあるリクエストの数は、到着率とそれぞれがそこに留まる時間の積に等しく、これがすべてのプール、キュー、接続上限のサイズを決めます。
 section: patterns
 group: Foundations

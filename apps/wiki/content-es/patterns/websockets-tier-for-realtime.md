@@ -1,5 +1,6 @@
 ---
 title: Una capa de WebSockets para tiempo real
+seoTitle: WebSockets para sistemas en tiempo real
 summary: Mantén abiertas las conexiones en tiempo real en un Hub en tiempo real que ejecuta un runtime hecho para ello, y enruta a él solo el tráfico en tiempo real, para que el chat y las actualizaciones en vivo dejen de devorar workers del Servidor de aplicaciones.
 section: patterns
 group: Scaling steps

@@ -1,5 +1,6 @@
 ---
 title: Sesiones persistentes
+seoTitle: Sesiones persistentes: cómo funcionan y qué cuestan
 summary: Las sesiones persistentes hacen que un balanceador de carga devuelva un cliente al servidor que usó primero, para que la memoria de ese servidor pueda guardar el estado del cliente.
 section: patterns
 group: Outside the game

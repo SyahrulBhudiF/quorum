@@ -1,5 +1,6 @@
 ---
 title: Escalado vertical y horizontal
+seoTitle: Escalado vertical frente a horizontal: cuál elegir
 summary: Haz más grande una máquina, o ejecuta más máquinas, y sabe cuál elegir primero.
 section: patterns
 group: Scaling reads and compute

@@ -1,5 +1,6 @@
 ---
 title: CDN のプッシュとプル
+seoTitle: CDN のプッシュとプルの違いを解説
 summary: コンテンツのコピーをユーザーの近くのサーバーに置き、オリジンから必要に応じて埋める（プル）か、自分でアップロードする（プッシュ）かです。
 section: patterns
 group: Scaling reads and compute

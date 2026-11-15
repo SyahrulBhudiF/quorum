@@ -1,5 +1,6 @@
 ---
 title: Outbox transaccional
+seoTitle: Patrón Outbox transaccional explicado
 summary: Escribe el evento en la misma transacción de base de datos que el cambio, y luego publícalo desde allí, para que la base de datos y el broker nunca discrepen.
 section: patterns
 group: Messaging and async

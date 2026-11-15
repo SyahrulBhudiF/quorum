@@ -1,5 +1,6 @@
 ---
 title: SLO とエラーバジェット
+seoTitle: SLO とエラーバジェットを解説
 summary: ユーザーが気づく信頼性の目標を決め、それが許す失敗を予算として扱い、残りの予算で出荷するか固めるかを決めます。
 section: patterns
 group: Operate and observe

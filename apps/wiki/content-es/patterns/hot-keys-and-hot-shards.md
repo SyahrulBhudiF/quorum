@@ -1,5 +1,6 @@
 ---
 title: Claves calientes y shards calientes
+seoTitle: Claves calientes y shards calientes: causas y soluciones
 summary: Cuando una clave o un shard se lleva una gran parte del tráfico, añadir servidores no ayuda, así que reparte esa clave o cambia la clave de shard.
 section: patterns
 group: Scaling data

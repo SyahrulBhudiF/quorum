@@ -1,5 +1,6 @@
 ---
 title: Búsqueda de texto completo y el índice invertido
+seoTitle: Búsqueda de texto completo e índice invertido
 summary: Indexa cada palabra con los documentos que la contienen en un motor de búsqueda aparte, para que una consulta lea unas pocas listas cortas en lugar de recorrer cada fila.
 section: patterns
 group: Scaling data

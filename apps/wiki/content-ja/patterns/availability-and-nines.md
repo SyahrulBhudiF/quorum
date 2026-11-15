@@ -1,5 +1,6 @@
 ---
 title: 可用性とナイン
+seoTitle: 可用性とナイン: 99.9% と 99.99% の違い
 summary: 稼働時間のナインが 1 つ増えるごとに許される停止時間は 10 分の 1 になり、連鎖の中のハードな依存はそれぞれ全体を下げます。
 section: patterns
 group: Foundations

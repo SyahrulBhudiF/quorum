@@ -1,5 +1,6 @@
 ---
 title: Comprobaciones de estado y failover
+seoTitle: Comprobaciones de estado y failover explicados
 summary: Sondea cada servidor y deja de enviarle tráfico cuando deja de responder, y pasa a un standby cuando cae una zona entera.
 section: patterns
 group: Resilience

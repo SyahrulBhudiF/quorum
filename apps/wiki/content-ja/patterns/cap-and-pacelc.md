@@ -1,5 +1,6 @@
 ---
 title: CAP と PACELC
+seoTitle: CAP 定理と PACELC を解説
 summary: ネットワークが分断されると、複製されたストアは一部のリクエストを拒否するか古い値を返すかを選ばなければならず、健全なときでもレイテンシと一貫性を引き換えにします。
 section: patterns
 group: Foundations

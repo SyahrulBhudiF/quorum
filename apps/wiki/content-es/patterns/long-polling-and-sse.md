@@ -1,5 +1,6 @@
 ---
 title: Long polling y server-sent events
+seoTitle: Long polling frente a server-sent events
 summary: El long polling y los server-sent events permiten que un servidor envíe actualizaciones a un navegador por HTTP simple, sin la conexión bidireccional de un WebSocket.
 section: patterns
 group: Outside the game

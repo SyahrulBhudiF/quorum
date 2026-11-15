@@ -1,5 +1,6 @@
 ---
 title: Consenso y elección de líder
+seoTitle: Consenso y elección de líder explicados
 summary: Haz que un grupo de servidores se ponga de acuerdo en un único orden de escrituras mediante una votación por mayoría, para que los datos sigan correctos mientras falla una minoría.
 section: patterns
 group: Scaling data

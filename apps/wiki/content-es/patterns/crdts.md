@@ -1,5 +1,6 @@
 ---
 title: CRDT
+seoTitle: CRDT explicados: fusionar sin un líder
 summary: Un tipo de dato replicado libre de conflictos permite que cada réplica acepte escrituras por su cuenta y aun así se fusione en el mismo estado sin coordinación.
 section: patterns
 group: Outside the game

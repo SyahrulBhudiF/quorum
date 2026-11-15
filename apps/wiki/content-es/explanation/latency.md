@@ -1,5 +1,6 @@
 ---
 title: Latencia y percentiles
+seoTitle: Percentiles de latencia p50, p95 y p99 explicados
 summary: A dónde va el tiempo de una petición, por qué la media esconde a tus usuarios más lentos y cómo calcula el juego p50, p95 y p99.
 section: explanation
 order: 2

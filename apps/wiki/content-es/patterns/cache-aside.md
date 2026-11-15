@@ -1,5 +1,6 @@
 ---
 title: Cache-aside
+seoTitle: Patrón Cache-aside explicado
 summary: Mantén las lecturas calientes en memoria y deja que la app llene la caché en un fallo, para que la base de datos sirva cada fila popular una vez en lugar de una vez por petición.
 section: patterns
 group: Scaling reads and compute

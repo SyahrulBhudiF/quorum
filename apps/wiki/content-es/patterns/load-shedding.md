@@ -1,5 +1,6 @@
 ---
 title: Descarte de carga
+seoTitle: Descarte de carga: soltar trabajo para seguir en pie
 summary: Cuando la demanda supera la capacidad, rechaza pronto el trabajo más barato para que el trabajo que conservas siga terminando a tiempo.
 section: patterns
 group: Resilience

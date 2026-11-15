@@ -1,5 +1,6 @@
 ---
 title: 書き込み時と読み取り時のファンアウト
+seoTitle: 書き込み時ファンアウトと読み取り時ファンアウトの違い
 summary: ユーザーのフィードを、投稿時にフォロワー全員へコピーして作るか、読み取り時にフォロー先の投稿を集めて作るか。
 section: patterns
 group: Scaling reads and compute

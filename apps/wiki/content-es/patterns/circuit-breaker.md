@@ -1,5 +1,6 @@
 ---
 title: Circuit breaker
+seoTitle: Patrón Circuit breaker explicado
 summary: Deja de llamar a una dependencia que sigue fallando, responde rápido con una alternativa y sondea de vez en cuando para ver si se ha recuperado.
 section: patterns
 group: Resilience

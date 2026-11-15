@@ -1,5 +1,6 @@
 ---
 title: Balanceo de carga de capa 4 y capa 7
+seoTitle: Balanceo de carga de capa 4 frente a capa 7
 summary: Elige entre un balanceador que reenvía conexiones TCP con rapidez y uno que lee cada petición HTTP para poder enrutar según el contenido.
 section: patterns
 group: Scaling reads and compute

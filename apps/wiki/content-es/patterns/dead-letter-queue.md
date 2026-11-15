@@ -1,5 +1,6 @@
 ---
 title: Cola de mensajes muertos
+seoTitle: Colas de mensajes muertos explicadas
 summary: Mueve un mensaje que sigue fallando a una cola aparte tras unos pocos intentos, para que un solo mensaje defectuoso no bloquee a los workers.
 section: patterns
 group: Messaging and async

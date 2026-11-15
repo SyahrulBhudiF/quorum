@@ -1,5 +1,6 @@
 ---
 title: リードレプリカ
+seoTitle: リードレプリカ: データベースの読み取りをスケールさせる
 summary: データベースをフォロワーにコピーして読み取りを処理させ、書き込みは 1 つのプライマリが担ったまま読み取りトラフィックをスケールさせます。
 section: patterns
 group: Scaling reads and compute

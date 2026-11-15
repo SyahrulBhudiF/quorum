@@ -1,5 +1,6 @@
 ---
 title: レプリケーション戦略
+seoTitle: データベースのレプリケーション戦略を解説
 summary: データのコピーをどう同期させるかを選び、書き込みのレイテンシと失う書き込みを、古い読み取りと複雑さと引き換えにします。
 section: patterns
 group: Scaling data

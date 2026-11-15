@@ -1,5 +1,6 @@
 ---
 title: Sharding
+seoTitle: Sharding de bases de datos explicado: cuándo y cómo
 summary: Divide un conjunto de datos entre varias bases de datos según una clave, para que las escrituras y el almacenamiento escalen más allá de lo que cabe en una máquina.
 section: patterns
 group: Scaling data

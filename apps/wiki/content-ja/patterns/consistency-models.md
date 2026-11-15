@@ -1,5 +1,6 @@
 ---
 title: 一貫性モデル
+seoTitle: 一貫性モデル: 強い一貫性から結果整合性まで
 summary: 一貫性モデルは、書き込みの後に読み取りがどの値を返してよいかを定め、強いモデルほどレイテンシと可用性を払います。
 section: patterns
 group: Foundations

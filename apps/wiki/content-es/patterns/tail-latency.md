@@ -1,5 +1,6 @@
 ---
 title: Latencia de cola
+seoTitle: Latencia de cola explicada: por qué importa p99
 summary: El pequeño porcentaje de peticiones más lentas determina cómo se siente un servicio, y una petición que se abre en abanico a muchos servidores se topa con esa cola casi siempre.
 section: patterns
 group: Foundations

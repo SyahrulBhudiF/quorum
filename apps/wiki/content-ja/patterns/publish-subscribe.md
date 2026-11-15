@@ -1,5 +1,6 @@
 ---
 title: パブリッシュとサブスクライブ
+seoTitle: パブリッシュ/サブスクライブパターンを解説
 summary: 各イベントをトピックへ 1 回パブリッシュし、関心のある各サービスがそれを読むようにします。生産者は自分のイベントを誰が消費するかを知らなくなります。
 section: patterns
 group: Messaging and async

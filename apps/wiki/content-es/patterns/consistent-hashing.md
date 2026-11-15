@@ -1,5 +1,6 @@
 ---
 title: Hashing consistente
+seoTitle: Hashing consistente explicado: anillo y nodos virtuales
 summary: Coloca las claves en un anillo de servidores, para que añadir o quitar un servidor mueva solo su parte de las claves en lugar de casi todas.
 section: patterns
 group: Scaling data

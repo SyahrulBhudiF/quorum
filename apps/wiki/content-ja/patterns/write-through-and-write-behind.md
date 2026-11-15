@@ -1,5 +1,6 @@
 ---
 title: ライトスルーとライトビハインド
+seoTitle: ライトスルーとライトビハインドキャッシュの違い
 summary: キャッシュにも書き込みを受けさせ、それぞれの書き込みをそのままデータベースへ渡すか、しばらく保持するかして、読み取りが古い値を見ないようにします。
 section: patterns
 group: Scaling reads and compute

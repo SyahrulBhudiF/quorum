@@ -1,5 +1,6 @@
 ---
 title: SLO y presupuestos de error
+seoTitle: SLO y presupuestos de error explicados
 summary: Elige un objetivo de fiabilidad que los usuarios notarían, trata los fallos que permite como un presupuesto, y deja que el presupuesto restante decida si publicar o reforzar.
 section: patterns
 group: Operate and observe

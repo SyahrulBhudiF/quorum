@@ -1,5 +1,6 @@
 ---
 title: 冪等キー
+seoTitle: 冪等キー: リトライを安全にする
 summary: 各書き込みにサーバーが覚える一意なキーを付け、再試行されたリクエストが処理を 1 回だけ行うようにします。
 section: patterns
 group: Messaging and async

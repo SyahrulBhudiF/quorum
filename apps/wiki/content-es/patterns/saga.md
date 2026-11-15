@@ -1,5 +1,6 @@
 ---
 title: Saga
+seoTitle: Patrón Saga explicado
 summary: Una saga ejecuta una transacción de negocio como una cadena de transacciones locales entre servicios y deshace los pasos terminados con acciones compensatorias cuando falla un paso posterior.
 section: patterns
 group: Outside the game

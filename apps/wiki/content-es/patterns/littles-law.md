@@ -1,5 +1,6 @@
 ---
 title: Ley de Little
+seoTitle: Ley de Little explicada con ejemplos
 summary: El número de peticiones dentro de un sistema es igual a la tasa de llegada por el tiempo que cada una pasa allí, lo que dimensiona cada pool, cola y límite de conexiones.
 section: patterns
 group: Foundations

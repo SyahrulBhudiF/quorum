@@ -1,5 +1,6 @@
 ---
 title: キャッシュアサイド
+seoTitle: キャッシュアサイドパターンを解説
 summary: ホットな読み取りをメモリに置き、ミスのときにアプリがキャッシュを埋めるので、データベースは人気の行をリクエストごとではなく 1 回だけ処理します。
 section: patterns
 group: Scaling reads and compute

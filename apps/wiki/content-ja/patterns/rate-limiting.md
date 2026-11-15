@@ -1,5 +1,6 @@
 ---
 title: レート制限
+seoTitle: レート制限のアルゴリズムを解説
 summary: クライアントやサービスが 1 秒あたりに送れるリクエスト数を制限し、騒がしい呼び出し元がみんなで共有する容量を使い切れないようにします。
 section: patterns
 group: Resilience

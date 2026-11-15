@@ -1,5 +1,6 @@
 ---
 title: ストラングラーパターン
+seoTitle: ストラングラーフィグパターンを解説
 summary: 古いシステムを 1 つの入口の裏で少しずつ置き換え、大規模な書き直しなしに新しいものが引き継ぐようにします。
 section: patterns
 group: Deploys and change

@@ -1,5 +1,6 @@
 ---
 title: 垂直スケーリングと水平スケーリング
+seoTitle: 垂直スケーリングと水平スケーリング: どちらを選ぶか
 summary: 1 台のマシンを大きくするか、マシンを増やすか。どちらに先に手を伸ばすべきかを知っておきます。
 section: patterns
 group: Scaling reads and compute

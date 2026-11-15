@@ -1,5 +1,6 @@
 ---
 title: Despliegues blue-green y canario
+seoTitle: Despliegues blue-green y canario explicados
 summary: Lanza una versión nueva junto a la vieja, o primero a unos pocos usuarios, para que un mal lanzamiento llegue a poca gente y se revierta rápido.
 section: patterns
 group: Deploys and change

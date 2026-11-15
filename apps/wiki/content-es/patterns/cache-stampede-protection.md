@@ -1,5 +1,6 @@
 ---
 title: Protección contra estampidas de caché
+seoTitle: Estampida de caché: cómo evitarla
 summary: Evita que muchos lectores reconstruyan a la vez la misma clave de caché caducada, para que una sola clave popular no tumbe la base de datos.
 section: patterns
 group: Scaling reads and compute

@@ -1,5 +1,6 @@
 ---
 title: レイヤー 4 とレイヤー 7 のロードバランシング
+seoTitle: レイヤー 4 とレイヤー 7 のロードバランシングの違い
 summary: TCP 接続を速く転送するバランサーと、各 HTTP リクエストを読んで内容で振り分けるバランサーのどちらかを選びます。
 section: patterns
 group: Scaling reads and compute

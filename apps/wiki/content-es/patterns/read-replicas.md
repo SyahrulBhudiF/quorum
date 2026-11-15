@@ -1,5 +1,6 @@
 ---
 title: Réplicas de lectura
+seoTitle: Réplicas de lectura: escala las lecturas de la base de datos
 summary: Copia la base de datos a seguidores que sirven lecturas, para que el tráfico de lectura escale hacia fuera mientras una primaria recibe las escrituras.
 section: patterns
 group: Scaling reads and compute

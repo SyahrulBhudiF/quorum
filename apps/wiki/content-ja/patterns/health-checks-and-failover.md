@@ -1,5 +1,6 @@
 ---
 title: ヘルスチェックとフェイルオーバー
+seoTitle: ヘルスチェックとフェイルオーバーを解説
 summary: 各サーバーを監視し、応答しなくなったらトラフィックを送るのをやめ、ゾーン全体が落ちたらスタンバイへ移します。
 section: patterns
 group: Resilience

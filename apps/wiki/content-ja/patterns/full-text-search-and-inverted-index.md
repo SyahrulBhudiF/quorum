@@ -1,5 +1,6 @@
 ---
 title: 全文検索と転置インデックス
+seoTitle: 全文検索と転置インデックス
 summary: 単語をそれが含まれる文書へ対応づける索引を別の検索エンジンに作り、クエリが全行を走査する代わりに短いいくつかのリストを読むようにします。
 section: patterns
 group: Scaling data

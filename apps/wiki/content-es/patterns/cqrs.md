@@ -1,5 +1,6 @@
 ---
 title: CQRS
+seoTitle: CQRS explicado: separar lecturas de escrituras
 summary: CQRS usa un modelo para cambiar los datos y otro distinto para leerlos, de modo que cada lado se pueda modelar y escalar para su propio trabajo.
 section: patterns
 group: Outside the game

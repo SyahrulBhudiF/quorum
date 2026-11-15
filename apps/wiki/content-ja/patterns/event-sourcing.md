@@ -1,5 +1,6 @@
 ---
 title: イベントソーシング
+seoTitle: イベントソーシングを解説: その代償とは
 summary: イベントソーシングはすべての変更を追記専用のログにイベントとして保存し、それを再生して現在の状態を組み立てます。
 section: patterns
 group: Outside the game

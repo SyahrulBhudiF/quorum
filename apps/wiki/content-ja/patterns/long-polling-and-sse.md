@@ -1,5 +1,6 @@
 ---
 title: ロングポーリングとサーバー送信イベント
+seoTitle: ロングポーリングとサーバー送信イベントの違い
 summary: ロングポーリングとサーバー送信イベントを使うと、WebSocket の双方向接続なしに、サーバーが素の HTTP で更新をブラウザへ押し出せます。
 section: patterns
 group: Outside the game

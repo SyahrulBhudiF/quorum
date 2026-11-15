@@ -1,5 +1,6 @@
 ---
 title: Sidecar
+seoTitle: Patrón Sidecar explicado
 summary: Un sidecar se ejecuta junto a la aplicación principal en su propio proceso o contenedor y se ocupa de tareas compartidas como el registro, el proxy y la seguridad.
 section: patterns
 group: Outside the game

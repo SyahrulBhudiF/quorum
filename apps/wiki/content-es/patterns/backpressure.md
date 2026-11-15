@@ -1,5 +1,6 @@
 ---
 title: Contrapresión
+seoTitle: Contrapresión en sistemas distribuidos
 summary: Haz que un consumidor lento presione hacia atrás a sus productores, para que una cola siga acotada en lugar de crecer hasta agotar la memoria o la latencia.
 section: patterns
 group: Messaging and async

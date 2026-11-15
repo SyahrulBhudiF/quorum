@@ -1,5 +1,6 @@
 ---
 title: CAP y PACELC
+seoTitle: Teorema CAP y PACELC explicados
 summary: Cuando la red se parte, un almacén replicado debe rechazar algunas peticiones o servir datos obsoletos, e incluso estando sano cambia latencia por consistencia.
 section: patterns
 group: Foundations

@@ -1,5 +1,6 @@
 ---
 title: CQRS（コマンドとクエリの責務分離）
+seoTitle: CQRS を解説: 読み取りと書き込みを分ける
 summary: CQRS はデータを変えるモデルと読むモデルを分けるので、両側をそれぞれの仕事に合わせて形作り、スケールできます。
 section: patterns
 group: Outside the game

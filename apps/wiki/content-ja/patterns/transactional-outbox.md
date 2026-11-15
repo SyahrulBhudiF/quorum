@@ -1,5 +1,6 @@
 ---
 title: トランザクショナルアウトボックス
+seoTitle: トランザクショナルアウトボックスパターンを解説
 summary: イベントを変更と同じデータベーストランザクションで書き、そこから発行するので、データベースとブローカーが食い違わないようにします。
 section: patterns
 group: Messaging and async

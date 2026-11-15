@@ -1,5 +1,6 @@
 ---
 title: Capacidad, utilización y colas
+seoTitle: Colas y utilización: por qué los servidores se vuelven lentos
 summary: Por qué un Nodo se vuelve lento mucho antes de llenarse, qué significan las tarjetas ámbar y roja y cómo las Colas cambian espera por seguridad.
 section: explanation
 order: 3

@@ -1,5 +1,6 @@
 ---
 title: Pool de conexiones
+seoTitle: Pool de conexiones a bases de datos explicado
 summary: Pon un pooler entre la app y la base de datos para que muchas conexiones de la app compartan unas pocas conexiones a la base de datos.
 section: patterns
 group: Scaling reads and compute

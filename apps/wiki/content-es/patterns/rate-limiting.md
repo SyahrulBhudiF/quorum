@@ -1,5 +1,6 @@
 ---
 title: Limitación de tasa
+seoTitle: Algoritmos de limitación de tasa explicados
 summary: Limita cuántas peticiones por segundo puede enviar un cliente o un servicio, para que un solo llamador ruidoso no consuma la capacidad que todos comparten.
 section: patterns
 group: Resilience

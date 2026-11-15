@@ -1,5 +1,6 @@
 ---
 title: Event sourcing
+seoTitle: Event sourcing explicado y lo que cuesta
 summary: Event sourcing guarda cada cambio como un evento en un registro de solo adición y construye el estado actual reproduciéndolo.
 section: patterns
 group: Outside the game

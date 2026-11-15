@@ -1,5 +1,6 @@
 ---
 title: 平均ではなくパーセンタイル
+seoTitle: レイテンシで平均よりパーセンタイルが優れる理由
 summary: 平均ではなく p50、p95、p99 を報告します。平均は、実際のユーザーが訴える遅いリクエストを均して消してしまうからです。
 section: patterns
 group: Operate and observe

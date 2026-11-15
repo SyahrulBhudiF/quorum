@@ -1,5 +1,6 @@
 ---
 title: Reintentos con backoff y jitter
+seoTitle: Reintentos con backoff exponencial y jitter
 summary: Reintenta una llamada fallida tras una espera creciente y aleatoria, para que un fallo breve se cure en lugar de convertirse en una tormenta de reintentos.
 section: patterns
 group: Resilience
