@@ -1,5 +1,6 @@
 import * as Sentry from '@sentry/cloudflare'
 import { API_PREFIX, INGEST_PREFIX, MCP_PATH } from '@quorum/rpc'
+import { isAppPath } from './shell-routes.ts'
 
 interface ApiBinding {
   fetch(request: Request): Promise<Response>
@@ -12,6 +13,8 @@ interface RateLimitBinding {
 
 interface Environment {
   readonly API: ApiBinding
+  /** The static assets, for the app shell. */
+  readonly ASSETS: ApiBinding
   /** Per-IP limits declared in `alchemy.run.ts`. Local dev without them allows everything. */
   readonly RATE_LIMIT_API?: RateLimitBinding
   readonly RATE_LIMIT_INGEST?: RateLimitBinding
@@ -95,6 +98,9 @@ export default Sentry.withSentry(
         if (!(await allowed(env.RATE_LIMIT_INGEST, ip))) return tooMany()
         return ingest(request, url)
       }
+      // A path the app routes gets the shell, `/`, whatever the URL; the assets answer every other
+      // unknown path with the 404 page.
+      if (isAppPath(url.pathname)) return env.ASSETS.fetch(new Request(new URL('/', url), request))
       if (isApi(url.pathname) && !(await allowed(env.RATE_LIMIT_API, ip))) return tooMany()
       return env.API.fetch(request)
     },

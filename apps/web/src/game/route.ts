@@ -11,17 +11,10 @@ import {
   string,
 } from 'foldkit/route'
 import { SANDBOX_IDS } from '@quorum/simulation/sandbox'
+import { MENU_PAGES } from './menu-pages.ts'
 
-export const MENU_PAGES = [
-  'sandbox',
-  'found',
-  'companies',
-  'legacy',
-  'history',
-  'challenges',
-  'achievements',
-  'settings',
-] as const
+export { MENU_PAGES }
+
 export const MenuPage = Schema.Literals(MENU_PAGES)
 
 /** A Sandbox in the URL: a guided one by id, or the free one. */

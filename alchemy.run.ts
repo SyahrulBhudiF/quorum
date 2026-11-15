@@ -4,6 +4,7 @@ import * as Cloudflare from '@alchemy.run/cloudflare'
 import * as Effect from 'effect/Effect'
 import * as Layer from 'effect/Layer'
 import { API_PREFIX, INGEST_PREFIX, MCP_PATH } from '@quorum/rpc'
+import { MENU_PAGES } from './apps/web/src/game/menu-pages.ts'
 import { wikiSources } from './packages/agent/wiki-sources.ts'
 import { simVersion } from './packages/simulation/sim-version.ts'
 import type { AgentRoomInstance } from './apps/backend/src/platform/agent-room.ts'
@@ -158,8 +159,21 @@ export default Alchemy.Stack(
       main: 'src/worker.ts',
       env: { API: ApiWorker, ...sentryEnv, ...rateLimits },
       assets: {
-        runWorkerFirst: [MCP_PATH, `${MCP_PATH}/*`, `${API_PREFIX}/*`, `${INGEST_PREFIX}/*`],
-        notFoundHandling: 'single-page-application',
+        // The app's own routes (apps/web/src/shell-routes.ts) get the shell from the Worker. Any
+        // other unknown path is a real 404, so a mistyped URL is no second copy of the title screen.
+        runWorkerFirst: [
+          MCP_PATH,
+          `${MCP_PATH}/*`,
+          `${API_PREFIX}/*`,
+          `${INGEST_PREFIX}/*`,
+          '/company',
+          '/company/',
+          ...MENU_PAGES.map((page) => `/${page}`),
+          '/sandbox/*',
+          '/challenges/*',
+          '/room/*',
+        ],
+        notFoundHandling: '404-page',
       },
       ...(stage === 'prod' && { domain: PRODUCTION_DOMAIN }),
       compatibility: sentryCompatibility,
