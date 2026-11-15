@@ -10,6 +10,8 @@ aliases: quorum, n r w, tunable consistency, dynamo, cassandra, leaderless, slop
 
 A quorum store keeps N copies of each key, waits for W of them on a write, and asks R of them on a read.
 
+The game Quorum takes its name from this term, but the page is about the technique, not the game.
+
 ## Use it when
 
 - The store must keep taking writes while a replica is down.

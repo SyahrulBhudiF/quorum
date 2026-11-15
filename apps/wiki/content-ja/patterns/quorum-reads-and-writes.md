@@ -9,6 +9,8 @@ aliases: quorum, n r w, tunable consistency, dynamo, cassandra, leaderless, slop
 
 クォーラムストアは各キーのコピーを N 個持ち、書き込みではそのうち W 個を待ち、読み取りでは R 個に問い合わせます。
 
+ゲームの Quorum はこの用語から名前を取っていますが、このページが扱うのはゲームではなく技術です。
+
 ## 使うとき
 
 - レプリカが落ちている間も、ストアが書き込みを受け続ける必要があるとき。

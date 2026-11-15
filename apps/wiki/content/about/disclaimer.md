@@ -10,6 +10,10 @@ Quorum is a game for learning system design. It is not an exact model of any rea
 or company. Read the wiki the same way you play the game: as a way to learn the ideas, not as a
 reference for production decisions.
 
+## The name
+
+Quorum is the name of the game, and it comes from the distributed systems term. A quorum is the number of replicas that must agree before an operation succeeds, so with 5 replicas a majority of 3 can still decide when 2 are down. The game does not teach only that idea. It uses the word as a name because a quorum is how a group of servers keeps working when some of them fail. Pages that explain the technique say "a quorum" in lowercase.
+
 ## Simplifications are on purpose
 
 Quorum tries to stay close to how real systems behave, but it trades accuracy for a game that stays

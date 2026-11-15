@@ -9,6 +9,8 @@ aliases: quorum, n r w, tunable consistency, dynamo, cassandra, leaderless, slop
 
 Un almacén de quórum guarda N copias de cada clave, espera a W de ellas en una escritura y consulta a R de ellas en una lectura.
 
+El juego Quorum toma su nombre de este término, pero la página trata de la técnica, no del juego.
+
 ## Cuándo usarlo
 
 - El almacén debe seguir aceptando escrituras mientras una réplica está caída.

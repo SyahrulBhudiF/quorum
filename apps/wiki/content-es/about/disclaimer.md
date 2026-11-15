@@ -10,6 +10,10 @@ Quorum es un juego para aprender diseño de sistemas. No es un modelo exacto de 
 ni empresa reales. Lee la wiki igual que juegas: como una forma de aprender las ideas, no como una
 referencia para decisiones de producción.
 
+## El nombre
+
+Quorum es el nombre del juego y viene del término de sistemas distribuidos. Un quórum es el número de réplicas que deben estar de acuerdo para que una operación tenga éxito, así que con 5 réplicas una mayoría de 3 sigue decidiendo cuando 2 están caídas. El juego no enseña solo esa idea. Usa la palabra como nombre porque un quórum es lo que permite a un grupo de servidores seguir funcionando cuando algunos fallan. Las páginas que explican la técnica escriben «quórum» en minúscula.
+
 ## Las simplificaciones son a propósito
 
 Quorum intenta acercarse a cómo se comportan los sistemas reales, pero sacrifica precisión para que el
